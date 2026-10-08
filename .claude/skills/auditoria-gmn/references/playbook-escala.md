@@ -83,7 +83,12 @@ comerciais, imprensa de bairro, patrocínio de eventos, blogs locais.
 
 - **Fotos:** subir 3–5 fotos reais por semana (trabalho, equipe, fachada, ambiente,
   antes/depois autorizado). Fachada clara ajuda a chegar. Sem banco de imagens.
-  Observação: geotag em EXIF não é fator comprovado — não vender isso como estratégia.
+- **Imagens otimizadas (serviço AdFlow):** antes de subir, cada imagem recebe nome de
+  arquivo descritivo (`<servico>-<bairro>-<cidade>.jpg`), geotag e palavras-chave nos
+  metadados, e — quando vai para o site — texto alternativo (alt) com serviço + bairro.
+  Como apresentar no PDF: padronização e SEO de imagem no site (onde nome de arquivo e
+  alt contam de verdade). **Não** prometer que a geotag sobe o perfil no Maps: o Google
+  remove o EXIF das fotos no upload do perfil e geotag não é fator de ranking comprovado.
 - **Vídeos:** 1 por mês, 10–30 s, gravados no local.
 - **Posts:** 1 por semana no mínimo. Formatos: novidade, oferta (com data), evento,
   bastidor, dúvida frequente respondida. Foto real + serviço + bairro + CTA.

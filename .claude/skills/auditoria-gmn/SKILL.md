@@ -82,6 +82,10 @@ manual "faça você mesmo" para o dono do negócio. Por isso:
   Regra: base com P0/P1 graves → "Implementação GMN" (e depois gestão); base ok mas sem
   constância → "Gestão contínua GMN"; perfil forte, demanda alta e cliente quer volume →
   "Presença local + Google Ads".
+- **Imagens otimizadas** (geotag, palavras-chave, nome de arquivo e alt) é serviço da
+  AdFlow: cite-o nas ações de fotos (prioridades, plano de 30 dias, ativos) como
+  padronização + SEO de imagem no site, nunca como fator que sobe o perfil no Maps
+  (ver playbook, seção 3).
 - Preencha `demanda` com os termos e volumes. As fases de prazo (semanas 1–4 fundação,
   60–90 dias primeiros movimentos, até 6 meses consolidação) já vêm por padrão; ajuste só se
   o caso pedir (ex.: perfil novo ou suspenso demora mais).
