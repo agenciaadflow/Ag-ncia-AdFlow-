@@ -27,8 +27,13 @@ o link não abrir e não houver nome + cidade.
 ## Fluxo de trabalho
 
 ### 1. Identificar o perfil
-- Expanda o link curto (`curl -sIL <link> | grep -i location`) para obter o nome, o
+- Expanda o link curto (`maps.app.goo.gl`, `share.google`, `g.co`) com
+  `curl -sIL -A "Mozilla/5.0" <link> | grep -i location` para obter o nome, o
   `place_id`/CID ou as coordenadas.
+- Se o link não abrir (erro 403 ou rede bloqueada para domínios do Google), não trave:
+  peça a Joh **nome do negócio + cidade** e siga a coleta pela busca na web. Avise que,
+  para links funcionarem direto, o ambiente precisa liberar `share.google`, `google.com`,
+  `www.google.com` e `maps.app.goo.gl` na rede, e a mudança vale para sessões novas.
 - Confirme nome exibido, endereço, telefone, categoria principal, nota e nº de avaliações via
   WebSearch/WebFetch (página do Maps, painel do Google na busca, agregadores).
 - Se o conector Windsor.ai estiver disponível e a conta do cliente conectada
