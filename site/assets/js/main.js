@@ -41,6 +41,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+
+  /* Brilho que acompanha o mouse (no celular, flutua devagar). */
+  var glow = document.querySelector(".glow");
+  var reduz = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (glow && !reduz) {
+    var tx = window.innerWidth / 2, ty = window.innerHeight * 0.3, x = tx, y = ty, mexeu = false;
+    window.addEventListener("pointermove", function (e) {
+      if (e.pointerType === "mouse") { tx = e.clientX; ty = e.clientY; mexeu = true; }
+    }, { passive: true });
+    var t0 = Date.now();
+    (function loop() {
+      if (!mexeu) {
+        var t = (Date.now() - t0) / 1000;
+        tx = window.innerWidth * (0.5 + 0.3 * Math.sin(t / 4));
+        ty = window.innerHeight * (0.35 + 0.2 * Math.cos(t / 5));
+      }
+      x += (tx - x) * 0.08; y += (ty - y) * 0.08;
+      glow.style.transform = "translate3d(" + x + "px," + y + "px,0)";
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  /* Ampliar print dos resultados. */
+  var zoom = document.getElementById("zoom");
+  if (zoom && typeof zoom.showModal === "function") {
+    var zimg = zoom.querySelector("img");
+    document.querySelectorAll("[data-zoom]").forEach(function (b) {
+      b.addEventListener("click", function () { zimg.src = b.getAttribute("data-zoom"); zoom.showModal(); });
+    });
+    zoom.querySelector(".zclose").addEventListener("click", function () { zoom.close(); });
+    zoom.addEventListener("click", function (e) { if (e.target === zoom) zoom.close(); });
+  }
+
   /* Formulário do diagnóstico: monta a mensagem e abre o WhatsApp. */
   var form = document.getElementById("form-diagnostico");
   if (form) {
