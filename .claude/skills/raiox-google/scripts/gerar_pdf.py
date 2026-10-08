@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gera o PDF de 14 páginas da Auditoria AdFlow de Google Meu Negócio.
+"""Gera o PDF de 14 páginas do Raio-X do Google (AdFlow) de Google Meu Negócio.
 
 Uso:
     python3 gerar_pdf.py dados.json saida.pdf [--marca config/marca.json]
@@ -194,7 +194,7 @@ class Doc:
         self.page = 0
         self.titulo_pagina = ""
         c = self.c
-        c.setTitle(f"Auditoria {marca['nome']} - {dados['negocio']['nome']}")
+        c.setTitle(f"Raio-X do Google {marca['nome']} - {dados['negocio']['nome']}")
         c.setAuthor(marca["agencia"])
 
     # ---- estilos
@@ -434,8 +434,8 @@ class Doc:
         c.drawString(M + 10, H - 70, self.m["agencia"].upper())
         c.setFillColor(HexColor("#C9D1E0"))
         c.setFont(FONT, 8.5)
-        modo = d.get("modo", "Auditoria pública")
-        c.drawString(M + 10, H - 86, f"{modo.upper()} DE GOOGLE BUSINESS PROFILE")
+        modo = d.get("modo", "Análise pública")
+        c.drawString(M + 10, H - 86, f"{modo.upper()} - GOOGLE MEU NEGÓCIO")
 
         y = H - 190
         h = self.para(f"<b>{escape(d['negocio']['nome'])}</b>", M + 10, y, CONTENT_W - 20,
@@ -443,7 +443,7 @@ class Doc:
         y -= h + 12
         c.setFont(BOLD, 15)
         c.setFillColor(self.A)
-        c.drawString(M + 10, y - 15, "Diagnóstico de presença local")
+        c.drawString(M + 10, y - 15, "Raio-X do Google")
         y -= 32
         h = self.para(escape("Análise estratégica do perfil, reputação, conversão e competitividade local, "
                              "com o passo a passo priorizado para os próximos 30 dias."),
@@ -520,12 +520,12 @@ class Doc:
         y = self.h1(y, "O que foi possível confirmar nesta coleta")
         linhas = [(e["item"], e["situacao"], e["status"]) for e in self.d["evidencias"]]
         y = self.tabela(y, ["Item", "Situação observada", "Status"], [140, 280, CONTENT_W - 420], linhas, status_col=2)
-        modo = self.d.get("modo", "Auditoria pública")
+        modo = self.d.get("modo", "Análise pública")
         txt_modo = ("Foram usados apenas dados públicos acessíveis. Recursos nativos indisponíveis foram marcados como Não verificado."
                     if "públic" in modo.lower() else
                     "Além dos dados públicos, foram usados dados do painel do perfil fornecidos pela empresa.")
         y = self.cards_linha(y, [
-            ("Modo da auditoria", modo, txt_modo),
+            ("Modo do Raio-X", modo, txt_modo),
             ("Cobertura da evidência", f"{k['cobertura']}% - confiança {k['confianca']}",
              "Itens não verificados foram excluídos da base possível e não receberam nota zero."),
         ])

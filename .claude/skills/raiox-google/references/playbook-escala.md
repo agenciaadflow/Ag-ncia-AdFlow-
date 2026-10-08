@@ -3,7 +3,7 @@
 Base: o Google declara que o ranking local depende de **relevância**, **distância** e
 **proeminência**. Distância não se controla (só área real de atendimento); o trabalho é
 maximizar relevância e proeminência e converter melhor o tráfego que já chega. Use este
-playbook para transformar cada gargalo da auditoria em ação concreta.
+playbook para transformar cada gargalo do Raio-X em ação concreta.
 
 Formato de cada ação no relatório: **Problema → Impacto → Ação → Prazo/Esforço**.
 

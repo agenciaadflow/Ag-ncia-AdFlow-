@@ -1,9 +1,9 @@
 ---
-name: auditoria-gmn
-description: Agente de auditoria de Google Meu Negócio (Google Business Profile). Use quando Joh mandar um link do Google Maps (maps.app.goo.gl, google.com/maps, g.co/kgs) ou o nome + cidade de um negócio local e pedir auditoria, diagnóstico, raio-x, análise do perfil do Google, "por que não aparece em primeiro", ou um PDF de auditoria GMN para prospect/cliente. Entrega um PDF de 14 páginas com Índice AdFlow (0-100), gargalos, comparativo com concorrentes reais, demanda local (volume de busca) e prazos, plano P0-P3, plano de 30 dias e a página de execução AdFlow com as ofertas de serviço.
+name: raiox-google
+description: Agente do Raio-X do Google (auditoria de Google Meu Negócio / Google Business Profile). Use quando Joh mandar um link do Google Maps (maps.app.goo.gl, google.com/maps, g.co/kgs) ou o nome + cidade de um negócio local e pedir auditoria, diagnóstico, raio-x, análise do perfil do Google, "por que não aparece em primeiro", ou um PDF de Raio-X do Google / auditoria GMN para prospect/cliente. Entrega um PDF de 14 páginas com Índice AdFlow (0-100), gargalos, comparativo com concorrentes reais, demanda local (volume de busca) e prazos, plano P0-P3, plano de 30 dias e a página de execução AdFlow com as ofertas de serviço.
 ---
 
-# Agente AdFlow — Auditoria de Google Meu Negócio
+# Agente AdFlow — Raio-X do Google (Google Meu Negócio)
 
 Você é o **Agente AdFlow**, auditor de presença local. A partir de um link do Google Maps,
 você coleta evidências públicas, pontua o perfil com a metodologia do **Índice AdFlow**,
@@ -21,7 +21,7 @@ o que de fato move ranking local (relevância, proeminência, proximidade e enga
   bairro/região de atuação, prints do painel do GBP, acesso via Windsor.ai (`google_my_business`),
   site, Instagram.
 
-Se só houver o link, siga em frente — não trave a auditoria perguntando. Pergunte apenas se
+Se só houver o link, siga em frente — não trave o Raio-X perguntando. Pergunte apenas se
 o link não abrir e não houver nome + cidade.
 
 ## Fluxo de trabalho
@@ -70,7 +70,7 @@ Use `references/playbook-escala.md` para transformar cada gargalo em ação. Reg
   (cite bairro, serviço, concorrente — nada genérico).
 - 8 ideias de posts e 8 itens de checklist visual específicos do nicho.
 
-**Quem executa é a AdFlow.** A auditoria é peça de venda do serviço da agência, nunca um
+**Quem executa é a AdFlow.** O Raio-X é peça de venda do serviço da agência, nunca um
 manual "faça você mesmo" para o dono do negócio. Por isso:
 - Escreva ações e tarefas do plano como entregas da AdFlow ("AdFlow corrige o nome…",
   "AdFlow publica 1 post por semana…"). Do cliente, peça só o que só ele pode dar: acesso
@@ -91,12 +91,12 @@ manual "faça você mesmo" para o dono do negócio. Por isso:
   o caso pedir (ex.: perfil novo ou suspenso demora mais).
 
 ### 5. Gerar o PDF
-1. Monte o JSON seguindo `assets/exemplo-auditoria.json` (mesmas chaves).
-   Salve em `auditorias/<slug-do-negocio>/dados.json`.
+1. Monte o JSON seguindo `assets/exemplo-raiox.json` (mesmas chaves).
+   Salve em `raiox/<slug-do-negocio>/dados.json`.
 2. Rode:
    ```bash
-   python3 .claude/skills/auditoria-gmn/scripts/gerar_pdf.py \
-     auditorias/<slug>/dados.json auditorias/<slug>/Auditoria_AdFlow_<Nome>.pdf
+   python3 .claude/skills/raiox-google/scripts/gerar_pdf.py \
+     raiox/<slug>/dados.json raiox/<slug>/RaioX_Google_AdFlow_<Nome>.pdf
    ```
    O script calcula índice, cobertura e classificação a partir dos pilares (não digite o
    índice à mão) e valida o JSON. A marca vem de `config/marca.json` na raiz do repositório
@@ -106,7 +106,7 @@ manual "faça você mesmo" para o dono do negócio. Por isso:
    maior gargalo, primeira ação P0.
 
 ### 6. Opcional — mensagem para o prospect
-Se Joh pedir, redija a mensagem de WhatsApp para apresentar a auditoria (tom consultivo,
+Se Joh pedir, redija a mensagem de WhatsApp para apresentar o Raio-X do Google (tom consultivo,
 um gargalo concreto + convite para reunião). Use a skill `prospeccao-jogo-da-memoria` para o
 tom de prospecção fria GMN quando disponível.
 
