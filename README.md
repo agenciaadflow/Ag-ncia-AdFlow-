@@ -2,9 +2,9 @@
 
 ## Agente AdFlow: Auditoria de Google Meu Negócio
 
-Manda o link do Google Maps e recebe um **PDF de 12 páginas** com o diagnóstico completo do
+Manda o link do Google Maps e recebe um **PDF de 14 páginas** com o diagnóstico completo do
 perfil: Índice AdFlow (0–100), gargalos, comparativo com concorrentes reais, plano P0–P3 e
-plano de 30 dias para subir no Maps e na pesquisa local.
+plano de 30 dias, demanda local com prazos realistas e a página "Como a AdFlow executa" com as ofertas de serviço.
 
 ### Como usar (Claude Code neste repositório)
 
@@ -50,3 +50,8 @@ Compacte a pasta `.claude/skills/auditoria-gmn` em `.zip` e envie em
 
 Edite `config/marca.json` (cores em hexadecimal, `contato` com o seu @ ou WhatsApp, que aparece na
 capa e no fechamento).
+
+As ofertas da página **"Como a AdFlow executa"** ficam em `ofertas_gmn` no mesmo arquivo:
+nome, para quem é, o que inclui e `investimento` (ex.: `"A partir de R$ 990/mês"`; vazio
+aparece como "Investimento sob consulta"). Em cada auditoria o agente marca qual oferta é a
+recomendada para aquele perfil.

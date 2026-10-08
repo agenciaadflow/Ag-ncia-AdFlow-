@@ -4,5 +4,47 @@
   "indice_nome": "Índice AdFlow",
   "cor_primaria": "#14213D",
   "cor_destaque": "#FCA311",
-  "contato": ""
+  "contato": "",
+  "_ofertas_comentario": "Ofertas da página 'Como a AdFlow executa'. Preencha 'investimento' (ex.: 'A partir de R$ 990/mês'); vazio = 'Investimento sob consulta'.",
+  "ofertas_gmn": [
+    {
+      "rotulo": "Projeto pontual",
+      "nome": "Implementação GMN",
+      "para_quem": "Para corrigir a base e deixar o perfil pronto para competir em 30 dias.",
+      "inclui": [
+        "Correção de nome, NAP e categorias",
+        "Serviços, descrição e atributos completos",
+        "Link com UTM e jornada até o WhatsApp",
+        "Pacote inicial de fotos e posts",
+        "Estrutura de pedido de avaliações (link, QR e mensagem)"
+      ],
+      "investimento": ""
+    },
+    {
+      "rotulo": "Mensal",
+      "nome": "Gestão contínua GMN",
+      "para_quem": "Para subir e se manter à frente dos concorrentes do bairro.",
+      "inclui": [
+        "Posts semanais e fotos novas",
+        "Respostas a 100% das avaliações em até 48 h",
+        "Correção de citações e diretórios",
+        "Posição em grid na palavra-alvo",
+        "Relatório mensal com insights do painel"
+      ],
+      "investimento": ""
+    },
+    {
+      "rotulo": "Mensal",
+      "nome": "Presença local + Google Ads",
+      "para_quem": "Para acelerar demanda quando o perfil já está arrumado.",
+      "inclui": [
+        "Tudo da gestão contínua",
+        "Campanha de pesquisa local com o perfil vinculado",
+        "Palavras-chave da cidade e do bairro",
+        "Rastreamento de ligações e WhatsApp",
+        "Otimização semanal da campanha"
+      ],
+      "investimento": ""
+    }
+  ]
 }

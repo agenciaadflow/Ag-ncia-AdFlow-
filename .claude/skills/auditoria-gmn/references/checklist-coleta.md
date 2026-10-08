@@ -1,7 +1,7 @@
 # Checklist de coleta de evidências
 
 Registre cada evidência com **fonte (URL)** e **status**: Verificado · Divergente · Não verificado.
-Tudo que for URL consultada entra em `fontes` no JSON (página 12 do PDF).
+Tudo que for URL consultada entra em `fontes` no JSON (última página do PDF).
 
 ## A. Identificação
 - [ ] Link expandido (`curl -sIL <link-curto> | grep -i '^location'`) → nome/coords/CID
@@ -48,6 +48,14 @@ Buscas sugeridas:
 - [ ] Site próprio com página por serviço/cidade
 - [ ] Menções em imprensa local, parceiros, associações
 - [ ] Instagram com link do Maps/site e NAP na bio
+
+## H. Demanda local (página "Demanda e prazos")
+- [ ] 3–6 termos: `<serviço> <cidade>`, `<serviço> <bairro>`, `<serviço> perto de mim`,
+      sinônimos que aparecem nas avaliações
+- [ ] Volume mensal de cada termo com a fonte (Planejador do Google Ads via Windsor
+      `google_ads` ou print; termos de pesquisa do painel GBP). Sem fonte = "N/V"
+- [ ] Leitura de 1 linha por termo: o perfil aparece? intenção (compra imediata/pesquisa)?
+- [ ] Atende várias cidades/bairros? Liste quais — vira recomendação de página por região
 
 ## Dados nativos (só com acesso)
 Windsor.ai `google_my_business` ou prints do painel: descrição, serviços, produtos, atributos,
