@@ -15,7 +15,7 @@ Página de links (bio do Instagram) com 4 páginas de serviço. HTML, CSS e JS p
 - **Hostinger:** envie o conteúdo da pasta `site` para `public_html`.
 
 ## Antes de publicar
-1. Troque `https://[SEU-DOMINIO]` pelo domínio real em todos os `.html`, no `sitemap.xml` e no `robots.txt`.
+1. Domínio configurado: `https://josaniaszadura.com.br` (páginas, `sitemap.xml` e `robots.txt`).
 2. Cole o código do Pixel da Meta no lugar do comentário `<!-- PIXEL META -->` e o do Google Tag em `<!-- GOOGLE TAG -->` (em cada página). O `assets/js/main.js` já dispara `track('Contact')` em todo clique de WhatsApp.
 3. Preencha os textos marcados com `[confirmar]` e `[definir]`.
 
