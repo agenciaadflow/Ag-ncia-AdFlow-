@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       var v = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ""; };
       var anuncia = form.querySelector('input[name="anuncia"]:checked');
+      var disposto = form.querySelector('input[name="disposto"]:checked');
       var linhas = [
         "Olá, Josânia! Quero agendar o diagnóstico gratuito do meu marketing.",
         "Nome: " + (v("d-nome") || "-"),
@@ -55,7 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Segmento: " + (v("d-segmento") || "-"),
         "Cidade: " + (v("d-cidade") || "-"),
         "Instagram: " + (v("d-instagram") || "-"),
-        "Já investe em anúncios? " + (anuncia ? anuncia.value : "-")
+        "Já investe em anúncios? " + (anuncia ? anuncia.value : "-"),
+        "Está disposto a investir em anúncios? " + (disposto ? disposto.value : "-")
       ];
       whats(linhas.join("\n"));
     });
