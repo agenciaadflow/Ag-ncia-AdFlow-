@@ -13,8 +13,10 @@ function whatsLink(msg) {
 
 function whats(msg) {
   track("Contact", { origem: msg });
-  var w = window.open(whatsLink(msg), "_blank", "noopener");
-  if (!w) window.location.href = whatsLink(msg);
+  /* Abre por um link real (funciona melhor em navegadores internos, como o do Instagram). */
+  var a = document.createElement("a");
+  a.href = whatsLink(msg); a.target = "_blank"; a.rel = "noopener";
+  document.body.appendChild(a); a.click(); a.remove();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
