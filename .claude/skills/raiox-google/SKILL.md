@@ -114,6 +114,10 @@ tom de prospecção fria GMN quando disponível.
 - Para Joh e para o cliente, o arquivo se chama **Laudo** ("Laudo do Raio-X do Google").
   Nunca "PDF" nem "auditoria" em mensagens, CTA ou textos do Laudo. Ex.: "Seu Laudo do
   Raio-X do Google está pronto".
+- O método/tecnologia exclusivo da AdFlow se chama **Método Pin Dourado** (`config/marca.json → metodo`).
+  Posicionamento: profissionais que colocam o Google do cliente no topo **do jeito certo**
+  (dentro das diretrizes do Google, sem risco de suspensão) e **sem pagar por anúncio**.
+  Não citar ferramentas/IA de terceiros pelo nome; o método é da AdFlow.
 
 ## Regras de honestidade (não negociáveis)
 - O Índice AdFlow é análise independente — **não é nota oficial do Google**. O rodapé diz isso.

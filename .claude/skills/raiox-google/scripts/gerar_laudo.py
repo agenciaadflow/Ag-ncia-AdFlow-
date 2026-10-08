@@ -48,6 +48,7 @@ MARCA_PADRAO = {
     "cor_primaria": "#14213D",
     "cor_destaque": "#FCA311",
     "contato": "",
+    "metodo": "Método Pin Dourado",
 }
 
 FASES_PADRAO = [
@@ -445,8 +446,9 @@ class Doc:
         c.setFillColor(self.A)
         c.drawString(M + 10, y - 15, "Laudo do Raio-X do Google")
         y -= 32
-        h = self.para(escape("Análise estratégica do perfil, reputação, conversão e competitividade local, "
-                             "com o passo a passo priorizado para os próximos 30 dias."),
+        h = self.para(escape(f"Análise feita com o {self.m['metodo']}, exclusivo da {self.m['agencia']}: perfil, "
+                             "reputação, conversão e concorrência local, com o passo a passo priorizado "
+                             "para os próximos 30 dias."),
                       M + 10, y, 330, self.style(10.5, HexColor("#C9D1E0"), leading=15))
 
         self.gauge(W - M - 95, H - 430, 62, k["indice"], HexColor("#2A3A5C"), self.A, white)
@@ -691,7 +693,7 @@ class Doc:
         rec = pp.get("recomendada")
         c = self.c
         y = self.nova_pagina("Como a AdFlow executa")
-        y = self.kicker(y, "Execução AdFlow")
+        y = self.kicker(y, f"Execução AdFlow - {self.m['metodo']}")
         y = self.h1(y, pp.get("titulo") or f"A {self.m['agencia']} executa o plano para você")
         if pp.get("motivo"):
             y = self.lead(y, pp["motivo"])
@@ -733,6 +735,9 @@ class Doc:
         cliente = pp.get("cliente_fornece") or CLIENTE_FORNECE_PADRAO
         y = self.subtitulo(M, y, "O que precisamos de você")
         y = self.lista(M, y, CONTENT_W, cliente, size=8.8, gap=4) - 6
+        y = self.callout(y, f"Do jeito certo: o {self.m['metodo']} trabalha dentro das diretrizes do Google. "
+                            "Sem nome com palavra-chave, sem avaliação comprada, sem endereço falso: "
+                            "nada que coloque seu perfil em risco de suspensão.", dark=False)
         cta = pp.get("cta") or "Próximo passo: uma conversa de 30 minutos para validar o painel e iniciar a semana 1."
         if self.m.get("contato"):
             cta += f" {self.m['contato']}"
@@ -826,7 +831,7 @@ class Doc:
             txt = escape(f).replace("/", "/\u200b").replace("&amp;", "&amp;\u200b")
             yb -= self.para(txt, M + half + 20, yb, half, st) + 3
         y = min(ya, yb) - 8
-        texto = (f"Análise independente desenvolvida pela {self.m['agencia']} com base nas informações disponíveis "
+        texto = (f"Análise independente desenvolvida pela {self.m['agencia']} com o {self.m['metodo']}, com base nas informações disponíveis "
                  f"na data indicada. O {self.m['indice_nome']} não é nota oficial do Google.")
         if self.m.get("contato"):
             texto += f" Contato: {self.m['contato']}"
