@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gera o PDF de 12 páginas da Auditoria AdFlow de Google Meu Negócio.
+"""Gera o PDF de 14 páginas da Auditoria AdFlow de Google Meu Negócio.
 
 Uso:
     python3 gerar_pdf.py dados.json saida.pdf [--marca config/marca.json]
@@ -49,6 +49,43 @@ MARCA_PADRAO = {
     "cor_destaque": "#FCA311",
     "contato": "",
 }
+
+FASES_PADRAO = [
+    {"periodo": "Semanas 1-4", "titulo": "Fundação",
+     "texto": "Correções de risco, cadastro completo e rotina de avaliações. O perfil fica pronto para subir; "
+              "a posição ainda pode oscilar."},
+    {"periodo": "60-90 dias", "titulo": "Primeiros movimentos",
+     "texto": "Com execução constante, é quando costumam aparecer os primeiros ganhos de posição e de "
+              "ligações, rotas e cliques no painel."},
+    {"periodo": "Até 6 meses", "titulo": "Consolidação",
+     "texto": "Volume de avaliações, conteúdo e autoridade acumulados sustentam a posição frente aos "
+              "concorrentes do bairro."},
+]
+
+OFERTAS_PADRAO = [
+    {"rotulo": "Projeto pontual", "nome": "Implementação GMN",
+     "para_quem": "Para corrigir a base e deixar o perfil pronto para competir em 30 dias.",
+     "inclui": ["Correção de nome, NAP e categorias", "Serviços, descrição e atributos completos",
+                "Link com UTM e jornada até o WhatsApp", "Pacote inicial de fotos e posts",
+                "Imagens otimizadas: geotag, palavras-chave e nome de arquivo",
+                "Estrutura de pedido de avaliações (link, QR e mensagem)"]},
+    {"rotulo": "Mensal", "nome": "Gestão contínua GMN",
+     "para_quem": "Para subir e se manter à frente dos concorrentes do bairro.",
+     "inclui": ["Posts semanais e fotos novas otimizadas (geotag e palavras-chave)", "Respostas a 100% das avaliações em até 48 h",
+                "Correção de citações e diretórios", "Posição em grid na palavra-alvo",
+                "Relatório mensal com insights do painel"]},
+    {"rotulo": "Mensal", "nome": "Presença local + Google Ads",
+     "para_quem": "Para acelerar demanda quando o perfil já está arrumado.",
+     "inclui": ["Tudo da gestão contínua", "Campanha de pesquisa local com o perfil vinculado",
+                "Palavras-chave da cidade e do bairro", "Rastreamento de ligações e WhatsApp",
+                "Otimização semanal da campanha"]},
+]
+
+CLIENTE_FORNECE_PADRAO = [
+    "Acesso de administrador ao perfil do Google (convite para o e-mail da agência).",
+    "Fotos e vídeos reais do dia a dia, ou uma visita para produção.",
+    "Envio do link de avaliação no pós-atendimento, com o roteiro que entregamos.",
+]
 
 WARNINGS = []
 
@@ -629,6 +666,79 @@ class Doc:
                             "O quadro compara sinais públicos e não representa ranking geolocalizado.", dark=False)
         self.checar(y, "comparativo")
 
+    def demanda(self):
+        dm = self.d.get("demanda")
+        if not dm:
+            return
+        y = self.nova_pagina("Demanda e prazos")
+        y = self.kicker(y, "Demanda local e expectativa")
+        y = self.h1(y, dm["titulo"])
+        if dm.get("fonte"):
+            y = self.lead(y, f"Fonte do volume: {dm['fonte']}")
+        linhas = [(t["termo"], t.get("volume") or "N/V", t.get("leitura", "")) for t in dm["termos"]]
+        y = self.tabela(y, ["Termo buscado", "Buscas/mês", "Leitura"], [190, 80, CONTENT_W - 270], linhas)
+        y = self.subtitulo(M, y, "O que esperar e quando")
+        fases = dm.get("fases") or FASES_PADRAO
+        y = self.cards_linha(y, [(f["periodo"], f["titulo"], f["texto"]) for f in fases])
+        y = self.callout(y, dm.get("destaque") or
+                         "Prazos de referência, não garantia: posição local varia com a localização de quem busca, "
+                         "a concorrência do bairro e a constância da execução.", dark=False)
+        self.checar(y, "demanda")
+
+    def proposta(self):
+        pp = self.d.get("proposta") or {}
+        ofertas = pp.get("ofertas") or self.m.get("ofertas_gmn") or OFERTAS_PADRAO
+        rec = pp.get("recomendada")
+        c = self.c
+        y = self.nova_pagina("Como a AdFlow executa")
+        y = self.kicker(y, "Execução AdFlow")
+        y = self.h1(y, pp.get("titulo") or f"A {self.m['agencia']} executa o plano para você")
+        if pp.get("motivo"):
+            y = self.lead(y, pp["motivo"])
+        gap = 12
+        n = len(ofertas)
+        w = (CONTENT_W - gap * (n - 1)) / n
+        st_t = self.style(11.5, bold=True, leading=14)
+        st_x = self.style(8.4, self.MUTED, leading=11.5)
+        st_l = self.style(8.4, self.INK, leading=11.3)
+
+        def altura(o):
+            h = 28 + self.para_h(f"<b>{escape(o['nome'])}</b>", w - 24, st_t) + 6
+            h += self.para_h(escape(o.get("para_quem", "")), w - 24, st_x) + 10
+            h += sum(self.para_h(escape(i), w - 37, st_l) + 4 for i in o.get("inclui", []))
+            return h + 44
+
+        h = max(altura(o) for o in ofertas)
+        for i, o in enumerate(ofertas):
+            x = M + i * (w + gap)
+            destaque = rec and o["nome"].lower() == rec.lower()
+            c.setFillColor(HexColor("#FFF6E5") if destaque else self.SOFT)
+            c.setStrokeColor(self.A if destaque else self.LINE)
+            c.setLineWidth(1.6 if destaque else 0.6)
+            c.roundRect(x, y - h, w, h, 6, fill=1, stroke=1)
+            c.setLineWidth(1)
+            c.setFont(BOLD, 7.3)
+            c.setFillColor(self.A if destaque else self.P)
+            c.drawString(x + 12, y - 20, "RECOMENDADO PARA ESTE PERFIL" if destaque else (o.get("rotulo") or "OPÇÃO").upper())
+            yy = y - 28
+            yy -= self.para(f"<b>{escape(o['nome'])}</b>", x + 12, yy, w - 24, st_t) + 6
+            yy -= self.para(escape(o.get("para_quem", "")), x + 12, yy, w - 24, st_x) + 10
+            self.lista(x + 12, yy, w - 24, o.get("inclui", []), size=8.4, gap=4)
+            c.setStrokeColor(self.LINE)
+            c.line(x + 12, y - h + 34, x + w - 12, y - h + 34)
+            c.setFont(BOLD, 9)
+            c.setFillColor(self.INK)
+            c.drawString(x + 12, y - h + 15, o.get("investimento") or "Investimento sob consulta")
+        y -= h + 16
+        cliente = pp.get("cliente_fornece") or CLIENTE_FORNECE_PADRAO
+        y = self.subtitulo(M, y, "O que precisamos de você")
+        y = self.lista(M, y, CONTENT_W, cliente, size=8.8, gap=4) - 6
+        cta = pp.get("cta") or "Próximo passo: uma conversa de 30 minutos para validar o painel e iniciar a semana 1."
+        if self.m.get("contato"):
+            cta += f" {self.m['contato']}"
+        y = self.callout(y, cta)
+        self.checar(y, "proposta")
+
     def prioridades(self):
         pr = self.d["prioridades"]
         c = self.c
@@ -663,7 +773,7 @@ class Doc:
         pl = self.d["plano_30_dias"]
         c = self.c
         y = self.nova_pagina("Plano de 30 dias")
-        y = self.kicker(y, "Execução prática")
+        y = self.kicker(y, "Execução AdFlow")
         y = self.h1(y, pl["titulo"])
         for i, s in enumerate(pl["semanas"], 1):
             st = self.style(9, self.INK, leading=12.5)
@@ -733,9 +843,11 @@ class Doc:
         self.conversao()
         self.reputacao()
         self.comparativo()
+        self.demanda()
         self.prioridades()
         self.plano()
         self.ativos()
+        self.proposta()
         self.veredito()
         self.c.save()
         return k
@@ -761,6 +873,13 @@ def validar(d):
             warn(f"ativos.{chave} com mais de 9 itens pode estourar a página.")
     if len(d["evidencias"]) > 12:
         warn("evidencias com mais de 12 linhas pode estourar a página 3.")
+    if "demanda" not in d:
+        warn("JSON sem 'demanda': a página de demanda local e prazos foi omitida.")
+    elif len(d["demanda"].get("termos", [])) > 6:
+        warn("demanda.termos com mais de 6 termos pode estourar a página.")
+    ofertas = d.get("proposta", {}).get("ofertas")
+    if ofertas and len(ofertas) > 3:
+        warn("proposta.ofertas com mais de 3 opções fica apertado na página.")
     desconhecidos = set(d["pilares"]) - {p[0] for p in PILARES}
     if desconhecidos:
         raise SystemExit(f"Pilares desconhecidos: {', '.join(sorted(desconhecidos))}")

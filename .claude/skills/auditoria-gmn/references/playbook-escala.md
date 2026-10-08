@@ -42,6 +42,19 @@ acessibilidade, estacionamento, identidade — ex.: "liderado por mulheres").
 cidade/bairro no título, H1, NAP no rodapé, mapa incorporado, avaliações e CTA de WhatsApp.
 É um dos sinais de relevância mais fortes e mais negligenciados.
 
+**Página por cidade/bairro atendido.** Quem atende várias regiões (área de serviço,
+delivery, atendimento em domicílio) ganha com uma página por região no site:
+"<serviço> em <bairro/cidade>", com conteúdo real daquela região (clientes atendidos,
+fotos de trabalhos lá, tempo de deslocamento, avaliações de quem é de lá). Não é para
+copiar a mesma página trocando o nome da cidade — conteúdo duplicado não ranqueia. E a
+página por região **não** substitui o perfil: não se cria perfil do Google em endereço onde
+não há atendimento real.
+
+**Palavra-chave com volume real.** Escolha a palavra-alvo e os termos de serviços, posts e
+landing pelo volume de busca da cidade (Planejador do Google Ads), não por achismo. O termo
+de maior volume nem sempre é o melhor: priorize intenção de compra local
+("<serviço> <bairro>", "perto de mim") sobre termos genéricos.
+
 ## 2. Proeminência (o Google confia em você?)
 
 **Avaliações — o motor mais forte que o negócio controla.**
@@ -70,7 +83,12 @@ comerciais, imprensa de bairro, patrocínio de eventos, blogs locais.
 
 - **Fotos:** subir 3–5 fotos reais por semana (trabalho, equipe, fachada, ambiente,
   antes/depois autorizado). Fachada clara ajuda a chegar. Sem banco de imagens.
-  Observação: geotag em EXIF não é fator comprovado — não vender isso como estratégia.
+- **Imagens otimizadas (serviço AdFlow):** antes de subir, cada imagem recebe nome de
+  arquivo descritivo (`<servico>-<bairro>-<cidade>.jpg`), geotag e palavras-chave nos
+  metadados, e — quando vai para o site — texto alternativo (alt) com serviço + bairro.
+  Como apresentar no PDF: padronização e SEO de imagem no site (onde nome de arquivo e
+  alt contam de verdade). **Não** prometer que a geotag sobe o perfil no Maps: o Google
+  remove o EXIF das fotos no upload do perfil e geotag não é fator de ranking comprovado.
 - **Vídeos:** 1 por mês, 10–30 s, gravados no local.
 - **Posts:** 1 por semana no mínimo. Formatos: novidade, oferta (com data), evento,
   bastidor, dúvida frequente respondida. Foto real + serviço + bairro + CTA.
@@ -94,6 +112,19 @@ comerciais, imprensa de bairro, patrocínio de eventos, blogs locais.
 - Google Ads com extensão de local / campanha Performance Max com objetivo de visitas
   ou ligações aproveita o perfil; o perfil bem trabalhado melhora a taxa de conversão do anúncio.
 - Ordem certa: P0 → P1 → ativos → aí escalar com mídia. Anúncio em perfil fraco paga caro.
+
+---
+
+## 6. Expectativa de prazo (alinhar antes de vender)
+
+| Período | O que acontece |
+|---|---|
+| Semanas 1–4 | Fundação: correções de risco, cadastro completo, rotina de avaliações. Posição pode oscilar. |
+| 60–90 dias | Primeiros movimentos de posição e de ações no painel (ligações, rotas, cliques), com execução constante. |
+| Até 6 meses | Consolidação: volume de avaliações, conteúdo e autoridade sustentam a posição. |
+
+Perfil novo, recém-verificado, suspenso ou em nicho muito disputado tende a demorar mais.
+Sempre apresentar como referência, nunca como garantia.
 
 ---
 
