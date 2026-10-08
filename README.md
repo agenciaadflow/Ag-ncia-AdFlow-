@@ -2,7 +2,7 @@
 
 ## Agente AdFlow: Raio-X do Google (Google Meu Negócio)
 
-Manda o link do Google Maps e recebe um **PDF de 14 páginas** com o diagnóstico completo do
+Manda o link do Google Maps e recebe o **Laudo do Raio-X do Google** (arquivo .pdf de 14 páginas) com o diagnóstico completo do
 perfil: Índice AdFlow (0–100), gargalos, comparativo com concorrentes reais, plano P0–P3 e
 plano de 30 dias, demanda local com prazos realistas e a página "Como a AdFlow executa" com as ofertas de serviço.
 
@@ -16,7 +16,7 @@ O agente (skill `raiox-google`) vai:
 1. Identificar o perfil e coletar evidências públicas (NAP, categorias, avaliações, site, CNPJ, diretórios).
 2. Buscar os concorrentes do pacote local e comparar.
 3. Pontuar os 9 pilares do Índice AdFlow.
-4. Montar o plano de ação e gerar o PDF em `raiox/<negocio>/`.
+4. Montar o plano de ação e gerar o Laudo em `raiox/<negocio>/`.
 
 Com a conta do cliente conectada ao Windsor.ai (`google_my_business`) ou com prints do painel,
 a cobertura vai para mais de 90% (serviços, fotos, posts, respostas e insights).
@@ -29,16 +29,16 @@ a cobertura vai para mais de 90% (serviços, fotos, posts, respostas e insights)
 | `.claude/skills/raiox-google/references/metodologia.md` | Régua de pontuação (100 pts, 9 pilares) |
 | `.claude/skills/raiox-google/references/playbook-escala.md` | O que realmente faz o perfil subir, e o que evitar |
 | `.claude/skills/raiox-google/references/checklist-coleta.md` | Roteiro de coleta de evidências |
-| `.claude/skills/raiox-google/scripts/gerar_pdf.py` | Gera o PDF a partir do JSON |
+| `.claude/skills/raiox-google/scripts/gerar_laudo.py` | Gera o Laudo a partir do JSON |
 | `.claude/skills/raiox-google/assets/exemplo-raiox.json` | Formato do JSON (exemplo fictício) |
-| `config/marca.json` | Nome, cores e contato que aparecem no PDF |
-| `raiox/exemplo/` | PDF de exemplo |
+| `config/marca.json` | Nome, cores e contato que aparecem no Laudo |
+| `raiox/exemplo/` | Laudo de exemplo |
 
-### Gerar o PDF manualmente
+### Gerar o Laudo manualmente
 
 ```bash
 pip install reportlab
-python3 .claude/skills/raiox-google/scripts/gerar_pdf.py dados.json saida.pdf
+python3 .claude/skills/raiox-google/scripts/gerar_laudo.py dados.json Laudo_RaioX_Google_AdFlow_Cliente.pdf
 ```
 
 ### Usar no claude.ai (fora do Claude Code)

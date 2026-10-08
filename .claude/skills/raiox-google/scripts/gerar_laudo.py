@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Gera o PDF de 14 páginas do Raio-X do Google (AdFlow) de Google Meu Negócio.
+"""Gera o Laudo do Raio-X do Google (AdFlow): arquivo .pdf de 14 páginas sobre o perfil do Google Meu Negócio.
 
 Uso:
-    python3 gerar_pdf.py dados.json saida.pdf [--marca config/marca.json]
+    python3 gerar_laudo.py dados.json Laudo_RaioX_Google_AdFlow_<Nome>.pdf [--marca config/marca.json]
 
 O índice, a cobertura e a classificação são calculados a partir dos pilares do JSON
 (ver references/metodologia.md). Avisos de validação e de texto que não coube na
@@ -194,7 +194,7 @@ class Doc:
         self.page = 0
         self.titulo_pagina = ""
         c = self.c
-        c.setTitle(f"Raio-X do Google {marca['nome']} - {dados['negocio']['nome']}")
+        c.setTitle(f"Laudo Raio-X do Google {marca['nome']} - {dados['negocio']['nome']}")
         c.setAuthor(marca["agencia"])
 
     # ---- estilos
@@ -443,7 +443,7 @@ class Doc:
         y -= h + 12
         c.setFont(BOLD, 15)
         c.setFillColor(self.A)
-        c.drawString(M + 10, y - 15, "Raio-X do Google")
+        c.drawString(M + 10, y - 15, "Laudo do Raio-X do Google")
         y -= 32
         h = self.para(escape("Análise estratégica do perfil, reputação, conversão e competitividade local, "
                              "com o passo a passo priorizado para os próximos 30 dias."),
@@ -910,7 +910,7 @@ def main():
     marca = carregar_marca(args.marca)
     os.makedirs(os.path.dirname(os.path.abspath(args.saida)), exist_ok=True)
     k = Doc(args.saida, dados, marca).gerar()
-    print(f"PDF gerado: {args.saida}")
+    print(f"Laudo gerado: {args.saida}")
     print(f"{marca['indice_nome']}: {k['indice']}/100 ({k['classificacao']}) | cobertura {k['cobertura']}% "
           f"(confiança {k['confianca']}) | base {k['obtidos']}/{k['possiveis']} | urgência {k['urgencia']}")
     for w in WARNINGS:

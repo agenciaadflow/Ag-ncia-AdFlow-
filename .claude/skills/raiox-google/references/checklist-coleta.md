@@ -1,7 +1,7 @@
 # Checklist de coleta de evidências
 
 Registre cada evidência com **fonte (URL)** e **status**: Verificado · Divergente · Não verificado.
-Tudo que for URL consultada entra em `fontes` no JSON (última página do PDF).
+Tudo que for URL consultada entra em `fontes` no JSON (última página do Laudo).
 
 ## A. Identificação
 - [ ] Link expandido (`curl -sIL <link-curto> | grep -i '^location'`) → nome/coords/CID
