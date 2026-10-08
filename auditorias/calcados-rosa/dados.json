@@ -8,8 +8,10 @@
   "data": "8 de outubro de 2026",
   "modo": "Auditoria pública",
   "palavra_chave_alvo": "loja de calçados foz do iguaçu",
-  "google": { "nota": 4.7, "avaliacoes": 35 },
-
+  "google": {
+    "nota": 4.7,
+    "avaliacoes": 35
+  },
   "pilares": {
     "nap": 11,
     "categorias": 7,
@@ -31,71 +33,170 @@
     "conversao": "Sem site e sem WhatsApp no perfil.",
     "autoridade": "16ª posição na busca de referência."
   },
-
   "resumo": {
     "titulo": "Uma loja com mais de 40 anos que o Google ainda trata como perfil sem dono.",
     "texto": "A Calçados Rosa tem marca forte fora do Google: 19 mil seguidores no Instagram, multimarcas de alto padrão e nota 4,7. No Maps, porém, o perfil não foi reivindicado, não tem site, descrição, produtos, posts nem respostas, e aparece apenas na 16ª posição para \"loja de calçados foz do iguaçu\". O gargalo não é reputação: é o perfil nunca ter sido assumido e trabalhado.",
-    "maior_forca": { "titulo": "Marca e satisfação reais", "texto": "Nota 4,7, 29 de 35 avaliações com 5 estrelas, elogios recorrentes ao atendimento e às marcas Schutz, Luz da Lua e Luiza Barcelos." },
-    "maior_fragilidade": { "titulo": "Perfil não reivindicado", "texto": "O Google exibe \"Reivindicar esta empresa\": ninguém da loja controla nome, fotos, horários, respostas ou conteúdo do perfil." },
-    "risco_prioritario": { "titulo": "Avaliações sem gestão", "texto": "Nenhuma resposta, uma negativa recente sem retorno e uma avaliação recente que aparenta vir de pessoa ligada à empresa (vedado pelo Google)." },
-    "oportunidade_central": { "titulo": "Buscas por marca premium", "texto": "Concorrentes do topo são populares. Um perfil completo com Schutz, Luiza Barcelos e bolsas pode liderar as buscas de quem procura alto padrão no Centro." },
+    "maior_forca": {
+      "titulo": "Marca e satisfação reais",
+      "texto": "Nota 4,7, 29 de 35 avaliações com 5 estrelas, elogios recorrentes ao atendimento e às marcas Schutz, Luz da Lua e Luiza Barcelos."
+    },
+    "maior_fragilidade": {
+      "titulo": "Perfil não reivindicado",
+      "texto": "O Google exibe \"Reivindicar esta empresa\": ninguém da loja controla nome, fotos, horários, respostas ou conteúdo do perfil."
+    },
+    "risco_prioritario": {
+      "titulo": "Avaliações sem gestão",
+      "texto": "Nenhuma resposta, uma negativa recente sem retorno e uma avaliação recente que aparenta vir de pessoa ligada à empresa (vedado pelo Google)."
+    },
+    "oportunidade_central": {
+      "titulo": "Buscas por marca premium",
+      "texto": "Concorrentes do topo são populares. Um perfil completo com Schutz, Luiza Barcelos e bolsas pode liderar as buscas de quem procura alto padrão no Centro."
+    },
     "frase_destaque": "Primeiro assumir o perfil; depois transformar a reputação que a loja já tem em sinais que o Google enxerga."
   },
-
   "evidencias": [
-    { "item": "Nome no Google", "situacao": "Calçados Rosa (igual ao nome fantasia e às redes)", "status": "Verificado" },
-    { "item": "Propriedade do perfil", "situacao": "Exibe \"Reivindicar esta empresa\": perfil não reivindicado", "status": "Ausente" },
-    { "item": "Endereço", "situacao": "Av. Brasil, 1033 - Centro, CEP 85851-010 no Google; 85851-000 no Instagram e no CNPJ", "status": "Divergente" },
-    { "item": "Telefone", "situacao": "(45) 3028-0292, igual no Facebook e diretórios; WhatsApp só no Facebook", "status": "Verificado" },
-    { "item": "Categoria", "situacao": "Principal: Loja de calçado. Adicionais: nenhuma exibida", "status": "Verificado" },
-    { "item": "Nota e avaliações", "situacao": "4,7 - 35 avaliações; 0 respostas do proprietário", "status": "Verificado" },
-    { "item": "Horários", "situacao": "Seg-sex 09-18h, sáb 09-16h; sem horário especial para o feriado de 12/10", "status": "Atenção" },
-    { "item": "Site / WhatsApp no perfil", "situacao": "Não tem (Google exibe \"Adicionar website\")", "status": "Ausente" },
-    { "item": "Descrição, produtos, serviços", "situacao": "Não cadastrados; atributos de pagamento e acessibilidade presentes", "status": "Ausente" },
-    { "item": "Fotos, vídeos e posts", "situacao": "~22 fotos de clientes e Street View 2015; sem logo, vídeo ou posts", "status": "Atenção" },
-    { "item": "Outra unidade", "situacao": "Perfil \"Calçados Rosa\" no Shopping JL Cataratas com o mesmo telefone", "status": "Atenção" }
+    {
+      "item": "Nome no Google",
+      "situacao": "Calçados Rosa (igual ao nome fantasia e às redes)",
+      "status": "Verificado"
+    },
+    {
+      "item": "Propriedade do perfil",
+      "situacao": "Exibe \"Reivindicar esta empresa\": perfil não reivindicado",
+      "status": "Ausente"
+    },
+    {
+      "item": "Endereço",
+      "situacao": "Av. Brasil, 1033 - Centro, CEP 85851-010 no Google; 85851-000 no Instagram e no CNPJ",
+      "status": "Divergente"
+    },
+    {
+      "item": "Telefone",
+      "situacao": "(45) 3028-0292, igual no Facebook e diretórios; WhatsApp só no Facebook",
+      "status": "Verificado"
+    },
+    {
+      "item": "Categoria",
+      "situacao": "Principal: Loja de calçado. Adicionais: nenhuma exibida",
+      "status": "Verificado"
+    },
+    {
+      "item": "Nota e avaliações",
+      "situacao": "4,7 - 35 avaliações; 0 respostas do proprietário",
+      "status": "Verificado"
+    },
+    {
+      "item": "Horários",
+      "situacao": "Seg-sex 09-18h, sáb 09-16h; sem horário especial para o feriado de 12/10",
+      "status": "Atenção"
+    },
+    {
+      "item": "Site / WhatsApp no perfil",
+      "situacao": "Não tem (Google exibe \"Adicionar website\")",
+      "status": "Ausente"
+    },
+    {
+      "item": "Descrição, produtos, serviços",
+      "situacao": "Não cadastrados; atributos de pagamento e acessibilidade presentes",
+      "status": "Ausente"
+    },
+    {
+      "item": "Fotos, vídeos e posts",
+      "situacao": "~22 fotos de clientes e Street View 2015; sem logo, vídeo ou posts",
+      "status": "Atenção"
+    },
+    {
+      "item": "Outra unidade",
+      "situacao": "Perfil antigo do Shopping JL Cataratas (unidade fechada) ainda ativo com o mesmo telefone",
+      "status": "Divergente"
+    }
   ],
-
   "fundamentos": {
     "titulo": "Antes de crescer, a loja precisa assumir o próprio perfil",
     "cards": [
-      { "rotulo": "Confirmado", "titulo": "Nome e telefone coerentes", "texto": "\"Calçados Rosa\" e (45) 3028-0292 batem com nome fantasia, Facebook e diretórios." },
-      { "rotulo": "Atenção", "titulo": "CEP e segunda unidade", "texto": "CEP diferente entre Google e CNPJ/Instagram; a unidade do Shopping JL usa o mesmo telefone da Av. Brasil." },
-      { "rotulo": "Categoria", "titulo": "Loja de calçado", "texto": "Mesma categoria dos três primeiros. Faltam adicionais para bolsas e acessórios, que a loja vende." }
+      {
+        "rotulo": "Confirmado",
+        "titulo": "Nome e telefone coerentes",
+        "texto": "\"Calçados Rosa\" e (45) 3028-0292 batem com nome fantasia, Facebook e diretórios."
+      },
+      {
+        "rotulo": "Atenção",
+        "titulo": "CEP e perfil antigo",
+        "texto": "CEP diferente entre Google e CNPJ/Instagram; a unidade fechada do Shopping JL segue ativa no Maps com o mesmo telefone."
+      },
+      {
+        "rotulo": "Categoria",
+        "titulo": "Loja de calçado",
+        "texto": "Mesma categoria dos três primeiros. Faltam adicionais para bolsas e acessórios, que a loja vende."
+      }
     ],
     "acoes": [
       "Reivindicar e verificar o perfil da Av. Brasil com a conta Google da empresa.",
-      "Reivindicar também o perfil do Shopping JL Cataratas e dar a cada unidade seu telefone próprio.",
+      "Marcar o perfil do Shopping JL Cataratas como fechado permanentemente.",
       "Padronizar o CEP correto em Google, Instagram, Facebook e diretórios.",
       "Adicionar categorias reais de bolsas e acessórios, se disponíveis no painel.",
       "Cadastrar horários especiais de feriados, começando por 12/10."
     ],
-    "regra": "Nome, endereço com CEP, telefone e horários devem ser idênticos no Google, nas redes e nos diretórios. Cada unidade é uma entidade: endereço e telefone próprios.",
+    "regra": "Nome, endereço com CEP, telefone e horários devem ser idênticos no Google, nas redes e nos diretórios. Unidade fechada não pode seguir ativa com o telefone da loja.",
     "destaque": {
       "problema": "perfil não reivindicado.",
       "impacto": "qualquer pessoa pode sugerir edições e a loja não controla fotos, horários nem respostas.",
       "acao": "reivindicar e verificar o perfil na primeira semana."
     }
   },
-
   "conversao": {
     "titulo": "Quem acha a loja no Google não tem para onde clicar",
     "tese": "Hoje o perfil só oferece ligação e rota. Sem site, WhatsApp, produtos ou descrição, o cliente que pesquisa \"Schutz Foz do Iguaçu\" ou \"bolsa feminina no Centro\" não vê o que a Calçados Rosa tem e escolhe quem mostra mais. O Instagram, com 19 mil seguidores, não está ligado ao Google.",
-    "validar": ["Qual WhatsApp atende a loja da Av. Brasil", "Se existe site próprio (ex.: loja online da marca)", "Marcas e linhas de produto atuais", "Formas de crediário e parcelamento", "Estacionamento e acessibilidade"],
-    "orientar": ["Multimarcas de alto padrão no Centro", "Schutz, Luiza Barcelos, Luz da Lua", "Sapatos, bolsas e acessórios", "Atendimento personalizado das vendedoras", "WhatsApp em 1 clique"],
+    "validar": [
+      "Qual WhatsApp atende a loja da Av. Brasil",
+      "Se existe site próprio (ex.: loja online da marca)",
+      "Marcas e linhas de produto atuais",
+      "Formas de crediário e parcelamento",
+      "Estacionamento e acessibilidade"
+    ],
+    "orientar": [
+      "Multimarcas de alto padrão no Centro",
+      "Schutz, Luiza Barcelos, Luz da Lua",
+      "Sapatos, bolsas e acessórios",
+      "Atendimento personalizado das vendedoras",
+      "WhatsApp em 1 clique"
+    ],
     "cards": [
-      { "rotulo": "Problema", "titulo": "Sem site e sem WhatsApp", "texto": "O único caminho de contato no perfil é o telefone fixo." },
-      { "rotulo": "Impacto", "titulo": "Cliques perdidos", "texto": "O cliente não consegue ver coleção, preço ou falar no WhatsApp a partir do Google." },
-      { "rotulo": "Ação", "titulo": "WhatsApp, produtos e link", "texto": "Adicionar WhatsApp, catálogo de produtos por marca e um link com UTM (site ou página de links)." }
+      {
+        "rotulo": "Problema",
+        "titulo": "Sem site e sem WhatsApp",
+        "texto": "O único caminho de contato no perfil é o telefone fixo."
+      },
+      {
+        "rotulo": "Impacto",
+        "titulo": "Cliques perdidos",
+        "texto": "O cliente não consegue ver coleção, preço ou falar no WhatsApp a partir do Google."
+      },
+      {
+        "rotulo": "Ação",
+        "titulo": "WhatsApp, produtos e link",
+        "texto": "Adicionar WhatsApp, catálogo de produtos por marca e um link com UTM (site ou página de links)."
+      }
     ]
   },
-
   "reputacao": {
     "titulo": "Os clientes elogiam; a loja ainda não responde",
     "metricas": [
-      { "rotulo": "Avaliações", "valor": "4,7 / 35", "legenda": "29 com 5 estrelas" },
-      { "rotulo": "Respostas", "valor": "0%", "legenda": "0 de 35 respondidas" },
-      { "rotulo": "Atividade", "valor": "0 posts", "legenda": "sem fotos do proprietário" }
+      {
+        "rotulo": "Avaliações",
+        "valor": "4,7 / 35",
+        "legenda": "29 com 5 estrelas"
+      },
+      {
+        "rotulo": "Respostas",
+        "valor": "0%",
+        "legenda": "0 de 35 respondidas"
+      },
+      {
+        "rotulo": "Atividade",
+        "valor": "0 posts",
+        "legenda": "sem fotos do proprietário"
+      }
     ],
     "rotina": [
       "Responder as 35 avaliações, começando pela negativa recente, com contexto e sem atacar.",
@@ -104,72 +205,217 @@
       "Avaliações não devem vir de sócias ou funcionárias; pedir remoção se houver.",
       "Subir fotos semanais de vitrine, coleção nova e equipe."
     ],
-    "temas": ["Schutz", "Luiza Barcelos", "Luz da Lua", "Bolsas e acessórios", "Crediário e parcelamento", "Atendimento das vendedoras"],
+    "temas": [
+      "Schutz",
+      "Luiza Barcelos",
+      "Luz da Lua",
+      "Bolsas e acessórios",
+      "Crediário e parcelamento",
+      "Atendimento das vendedoras"
+    ],
     "destaque": "Com 4 a 5 avaliações por semana a loja passa de 100 em cerca de 4 meses, no patamar de quem está no top 4."
   },
-
   "comparativo": {
     "titulo": "Dois vizinhos de quadra estão no top 4; a Calçados Rosa está em 16º",
     "busca": "loja de calçados foz do iguaçu",
     "linhas": [
-      { "empresa": "Calçados Rosa", "regiao": "Centro - Av. Brasil, 1033", "nota_avaliacoes": "4,7 / 35", "criterio": "Perfil auditado - 16ª posição; multimarcas de alto padrão", "auditado": true },
-      { "empresa": "Foz Star Calçados - Loja 02", "regiao": "Portes", "nota_avaliacoes": "4,3 / 465", "criterio": "1º lugar; perfil popular, com site próprio" },
-      { "empresa": "Serallê Calçados", "regiao": "Centro - Av. Brasil, 456", "nota_avaliacoes": "4,4 / 226", "criterio": "2º lugar; mesma avenida, com site próprio" },
-      { "empresa": "Sape Calçados", "regiao": "Centro - Av. Brasil, 997", "nota_avaliacoes": "4,6 / 205", "criterio": "3º lugar; vizinha de quadra, link para Instagram" },
-      { "empresa": "Leve Calçados", "regiao": "Centro - Av. Brasil, 1079", "nota_avaliacoes": "4,7 / 131", "criterio": "4º lugar; vizinha de quadra, com site próprio" }
+      {
+        "empresa": "Calçados Rosa",
+        "regiao": "Centro - Av. Brasil, 1033",
+        "nota_avaliacoes": "4,7 / 35",
+        "criterio": "Perfil auditado - 16ª posição; multimarcas de alto padrão",
+        "auditado": true
+      },
+      {
+        "empresa": "Foz Star Calçados - Loja 02",
+        "regiao": "Portes",
+        "nota_avaliacoes": "4,3 / 465",
+        "criterio": "1º lugar; perfil popular, com site próprio"
+      },
+      {
+        "empresa": "Serallê Calçados",
+        "regiao": "Centro - Av. Brasil, 456",
+        "nota_avaliacoes": "4,4 / 226",
+        "criterio": "2º lugar; mesma avenida, com site próprio"
+      },
+      {
+        "empresa": "Sape Calçados",
+        "regiao": "Centro - Av. Brasil, 997",
+        "nota_avaliacoes": "4,6 / 205",
+        "criterio": "3º lugar; vizinha de quadra, link para Instagram"
+      },
+      {
+        "empresa": "Leve Calçados",
+        "regiao": "Centro - Av. Brasil, 1079",
+        "nota_avaliacoes": "4,7 / 131",
+        "criterio": "4º lugar; vizinha de quadra, com site próprio"
+      }
     ],
-    "leitura": { "titulo": "Vantagem", "texto": "Nota igual ou maior que a de todos do top 4 e posicionamento de alto padrão que os líderes populares não têm." },
-    "lacuna": { "titulo": "Volume e perfil trabalhado", "texto": "Os vizinhos Sape e Leve têm 205 e 131 avaliações e link de site/Instagram; a Rosa tem 35 e perfil sem dono." }
+    "leitura": {
+      "titulo": "Vantagem",
+      "texto": "Nota igual ou maior que a de todos do top 4 e posicionamento de alto padrão que os líderes populares não têm."
+    },
+    "lacuna": {
+      "titulo": "Volume e perfil trabalhado",
+      "texto": "Os vizinhos Sape e Leve têm 205 e 131 avaliações e link de site/Instagram; a Rosa tem 35 e perfil sem dono."
+    }
   },
-
   "prioridades": {
     "titulo": "Primeiro assumir o perfil; depois provar e converter",
     "acoes": [
-      { "prioridade": "P0", "risco": true, "titulo": "Reivindicar e verificar os dois perfis", "texto": "Av. Brasil e Shopping JL Cataratas, com a conta Google da empresa; telefone próprio para cada unidade.", "esforco": "Baixa", "prazo": "Semana 1" },
-      { "prioridade": "P0", "risco": true, "titulo": "Responder avaliações e revisar a de pessoa ligada à loja", "texto": "Responder as 35, começando pela negativa; se alguma avaliação for de sócia ou funcionária, pedir a remoção.", "esforco": "Baixa", "prazo": "Semana 1" },
-      { "prioridade": "P1", "titulo": "Completar o perfil", "texto": "Logo, capa, descrição com marcas e Centro, categorias adicionais, CEP correto, WhatsApp e horários de feriado.", "esforco": "Baixa", "prazo": "Semana 1-2" },
-      { "prioridade": "P1", "titulo": "Catálogo de produtos por marca", "texto": "Produtos com foto para Schutz, Luiza Barcelos, Luz da Lua, bolsas e acessórios.", "esforco": "Média", "prazo": "Semana 2" },
-      { "prioridade": "P1", "titulo": "Rotina de avaliações", "texto": "Link curto e QR code no caixa e no WhatsApp pós-venda; meta de 4 a 5 por semana, sem incentivo.", "esforco": "Baixa", "prazo": "Semanas 2-4" },
-      { "prioridade": "P2", "titulo": "Fotos e posts semanais", "texto": "Coleção nova, vitrine, equipe e bastidores; 1 post por semana citando marca e Centro.", "esforco": "Média", "prazo": "Semanas 3-4" },
-      { "prioridade": "P2", "titulo": "Ligar Instagram, link e Google", "texto": "Link do Maps no Linktree e link com UTM no perfil; usar a audiência de 19 mil para pedir avaliações.", "esforco": "Baixa", "prazo": "Semana 3" },
-      { "prioridade": "P3", "titulo": "Medir posição e insights", "texto": "Baseline na semana 1 e grid de posição mensal em \"loja de calçados\" e buscas por marca.", "esforco": "Média", "prazo": "Semana 4" }
+      {
+        "prioridade": "P0",
+        "risco": true,
+        "titulo": "Reivindicar o perfil e fechar o antigo",
+        "texto": "Assumir o perfil da Av. Brasil e marcar a unidade do Shopping JL Cataratas como fechada permanentemente.",
+        "esforco": "Baixa",
+        "prazo": "Semana 1"
+      },
+      {
+        "prioridade": "P0",
+        "risco": true,
+        "titulo": "Responder avaliações e revisar a de pessoa ligada à loja",
+        "texto": "Responder as 35, começando pela negativa; se alguma avaliação for de sócia ou funcionária, pedir a remoção.",
+        "esforco": "Baixa",
+        "prazo": "Semana 1"
+      },
+      {
+        "prioridade": "P1",
+        "titulo": "Completar o perfil",
+        "texto": "Logo, capa, descrição com marcas e Centro, categorias adicionais, CEP correto, WhatsApp e horários de feriado.",
+        "esforco": "Baixa",
+        "prazo": "Semana 1-2"
+      },
+      {
+        "prioridade": "P1",
+        "titulo": "Catálogo de produtos por marca",
+        "texto": "Produtos com foto para Schutz, Luiza Barcelos, Luz da Lua, bolsas e acessórios.",
+        "esforco": "Média",
+        "prazo": "Semana 2"
+      },
+      {
+        "prioridade": "P1",
+        "titulo": "Rotina de avaliações",
+        "texto": "Link curto e QR code no caixa e no WhatsApp pós-venda; meta de 4 a 5 por semana, sem incentivo.",
+        "esforco": "Baixa",
+        "prazo": "Semanas 2-4"
+      },
+      {
+        "prioridade": "P2",
+        "titulo": "Fotos e posts semanais",
+        "texto": "Coleção nova, vitrine, equipe e bastidores; 1 post por semana citando marca e Centro.",
+        "esforco": "Média",
+        "prazo": "Semanas 3-4"
+      },
+      {
+        "prioridade": "P2",
+        "titulo": "Ligar Instagram, link e Google",
+        "texto": "Link do Maps no Linktree e link com UTM no perfil; usar a audiência de 19 mil para pedir avaliações.",
+        "esforco": "Baixa",
+        "prazo": "Semana 3"
+      },
+      {
+        "prioridade": "P3",
+        "titulo": "Medir posição e insights",
+        "texto": "Baseline na semana 1 e grid de posição mensal em \"loja de calçados\" e buscas por marca.",
+        "esforco": "Média",
+        "prazo": "Semana 4"
+      }
     ]
   },
-
   "plano_30_dias": {
     "titulo": "Quatro semanas para sair do 16º lugar",
     "semanas": [
-      { "titulo": "Semana 1 - Assumir o perfil", "tarefas": ["Reivindicar e verificar os perfis da Av. Brasil e do Shopping JL Cataratas.", "Cadastrar horário especial de feriado e corrigir o CEP.", "Responder todas as avaliações, começando pela negativa."] },
-      { "titulo": "Semana 2 - Completar e converter", "tarefas": ["Subir logo, capa e descrição citando marcas e o Centro.", "Adicionar WhatsApp, link com UTM e categorias adicionais.", "Cadastrar produtos por marca com foto real."] },
-      { "titulo": "Semana 3 - Prova social", "tarefas": ["Ativar QR code no caixa e mensagem de avaliação no WhatsApp pós-venda.", "Subir 10 fotos reais: fachada atual, vitrine, coleção e equipe.", "Colocar o link do Maps no Linktree e divulgar no Instagram."] },
-      { "titulo": "Semana 4 - Ritmo e medição", "tarefas": ["Publicar 2 posts com coleção, marca e chamada para a loja.", "Atualizar o CEP no Instagram, Facebook e diretórios.", "Medir posição e insights e comparar com a semana 1."] }
+      {
+        "titulo": "Semana 1 - Assumir o perfil",
+        "tarefas": [
+          "Reivindicar o perfil da Av. Brasil e fechar o perfil antigo do Shopping JL.",
+          "Cadastrar horário especial de feriado e corrigir o CEP.",
+          "Responder todas as avaliações, começando pela negativa."
+        ]
+      },
+      {
+        "titulo": "Semana 2 - Completar e converter",
+        "tarefas": [
+          "Subir logo, capa e descrição citando marcas e o Centro.",
+          "Adicionar WhatsApp, link com UTM e categorias adicionais.",
+          "Cadastrar produtos por marca com foto real."
+        ]
+      },
+      {
+        "titulo": "Semana 3 - Prova social",
+        "tarefas": [
+          "Ativar QR code no caixa e mensagem de avaliação no WhatsApp pós-venda.",
+          "Subir 10 fotos reais: fachada atual, vitrine, coleção e equipe.",
+          "Colocar o link do Maps no Linktree e divulgar no Instagram."
+        ]
+      },
+      {
+        "titulo": "Semana 4 - Ritmo e medição",
+        "tarefas": [
+          "Publicar 2 posts com coleção, marca e chamada para a loja.",
+          "Atualizar o CEP no Instagram, Facebook e diretórios.",
+          "Medir posição e insights e comparar com a semana 1."
+        ]
+      }
     ],
     "meta": "Meta: perfil 100% completo em 30 dias, 4 a 5 avaliações por semana e entrada no top 10 da busca de referência."
   },
-
   "ativos": {
     "titulo": "Mostrar no Google o que a loja já mostra no Instagram",
     "cards": [
-      { "titulo": "Catálogo por marca", "texto": "Produtos no perfil para Schutz, Luiza Barcelos, Luz da Lua, bolsas e acessórios." },
-      { "titulo": "Biblioteca visual", "texto": "Fachada atual, vitrines, coleção nova e equipe, substituindo o Street View de 2015." },
-      { "titulo": "Rotina de reputação", "texto": "QR code no caixa, mensagem pós-venda e resposta a 100% das avaliações." }
+      {
+        "titulo": "Catálogo por marca",
+        "texto": "Produtos no perfil para Schutz, Luiza Barcelos, Luz da Lua, bolsas e acessórios."
+      },
+      {
+        "titulo": "Biblioteca visual",
+        "texto": "Fachada atual, vitrines, coleção nova e equipe, substituindo o Street View de 2015."
+      },
+      {
+        "titulo": "Rotina de reputação",
+        "texto": "QR code no caixa, mensagem pós-venda e resposta a 100% das avaliações."
+      }
     ],
-    "ideias_posts": ["Chegou coleção nova Schutz", "Bolsas da semana: 3 combinações", "Sapato confortável para trabalhar o dia todo", "Como funciona o crediário da loja", "Conheça as vendedoras", "Tendência da estação em calçados femininos", "Onde estacionar perto da loja", "Horário especial de feriado"],
-    "checklist_visual": ["Logo e capa da marca", "Fachada atual (dia)", "Vitrine principal", "Interior e prateleiras", "Equipe atendendo", "Produtos por marca", "Bolsas e acessórios", "Vídeo curto da loja"],
+    "ideias_posts": [
+      "Chegou coleção nova Schutz",
+      "Bolsas da semana: 3 combinações",
+      "Sapato confortável para trabalhar o dia todo",
+      "Como funciona o crediário da loja",
+      "Conheça as vendedoras",
+      "Tendência da estação em calçados femininos",
+      "Onde estacionar perto da loja",
+      "Horário especial de feriado"
+    ],
+    "checklist_visual": [
+      "Logo e capa da marca",
+      "Fachada atual (dia)",
+      "Vitrine principal",
+      "Interior e prateleiras",
+      "Equipe atendendo",
+      "Produtos por marca",
+      "Bolsas e acessórios",
+      "Vídeo curto da loja"
+    ],
     "destaque": "Cada foto, produto e resposta vira um sinal que o Google usa para mostrar a loja a quem pesquisa calçados e marcas no Centro."
   },
-
   "veredito": {
     "titulo": "A reputação já existe. Falta a loja assumir o perfil e mostrá-la.",
     "texto": "A Calçados Rosa tem o que muitos concorrentes não têm: décadas de marca, nota 4,7, marcas de alto padrão e uma audiência grande no Instagram. O Índice baixo vem de um perfil que nunca foi reivindicado nem completado. São correções de baixo esforço com alto impacto, e o primeiro passo cabe na próxima semana.",
-    "proximo_passo": { "titulo": "Reivindicar os dois perfis", "texto": "Assumir Av. Brasil e Shopping JL Cataratas e responder as avaliações pendentes." },
-    "oportunidade": { "titulo": "Liderar o alto padrão no Centro", "texto": "Perfil completo + catálogo por marca + ritmo de avaliações para disputar o top 3 com os vizinhos de avenida." },
+    "proximo_passo": {
+      "titulo": "Assumir o perfil",
+      "texto": "Reivindicar a Av. Brasil, fechar o perfil antigo do Shopping JL e responder as avaliações pendentes."
+    },
+    "oportunidade": {
+      "titulo": "Liderar o alto padrão no Centro",
+      "texto": "Perfil completo + catálogo por marca + ritmo de avaliações para disputar o top 3 com os vizinhos de avenida."
+    },
     "limitacoes": [
       "Não houve acesso ao painel; dados coletados do perfil público em 08/10/2026.",
       "Posição observada em uma busca, sujeita a localização e dispositivo; sem grid geolocalizado.",
       "Categorias adicionais podem não aparecer publicamente.",
       "A ligação entre uma avaliação e a sociedade foi inferida pelo nome, sem confirmação.",
-      "Relação com o 2º CNPJ e com a loja online RosaPink não foi confirmada."
+      "Relação com o 2º CNPJ e com a loja online RosaPink não foi confirmada; unidade do Shopping JL informada como fechada."
     ],
     "fontes": [
       "https://share.google/a6I77aCtqqdMVd2rK",
