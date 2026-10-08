@@ -1,0 +1,162 @@
+{
+  "_comentario": "EXEMPLO FICTÍCIO para mostrar o formato. Pilar null = N/V (não verificado). Índice, cobertura e classificação são calculados pelo script.",
+  "negocio": {
+    "nome": "Studio Exemplo Unhas",
+    "nome_google": "Studio Exemplo Unhas | Alongamento em Gel | Manicure Cambuí",
+    "cidade": "Campinas, SP",
+    "link_maps": "https://maps.app.goo.gl/EXEMPLO"
+  },
+  "data": "8 de outubro de 2026",
+  "modo": "Auditoria pública",
+  "palavra_chave_alvo": "alongamento de unhas cambuí",
+  "google": { "nota": 4.8, "avaliacoes": 68 },
+
+  "pilares": {
+    "nap": 11,
+    "categorias": 7,
+    "servicos": null,
+    "avaliacoes": 13,
+    "respostas": 5,
+    "fotos": null,
+    "posts": null,
+    "conversao": 8,
+    "autoridade": 6
+  },
+  "pilares_notas": {
+    "nap": "Nome no Google contém termos que não aparecem na fachada.",
+    "respostas": "Cerca de 60% das últimas 20 avaliações têm resposta."
+  },
+
+  "resumo": {
+    "titulo": "A reputação é boa. O nome do perfil é o risco que precisa sair da frente primeiro.",
+    "texto": "O perfil tem nota alta, categoria aderente e uma jornada clara por WhatsApp. O que segura o crescimento é o nome com palavras-chave que não fazem parte da marca real, o volume de avaliações abaixo dos líderes do bairro e a falta de evidência de atividade recente no próprio Google.",
+    "maior_forca": { "titulo": "Nota 4,8 e WhatsApp direto", "texto": "Prova social sólida e caminho curto até o agendamento: o cliente decide sem sair do Google." },
+    "maior_fragilidade": { "titulo": "Volume abaixo dos líderes", "texto": "68 avaliações contra mediana de 102 nos três primeiros do Cambuí; a recência precisa acelerar." },
+    "risco_prioritario": { "titulo": "Nome com palavras-chave", "texto": "\"Alongamento em Gel | Manicure Cambuí\" não está na fachada nem no CNPJ: risco de edição ou suspensão." },
+    "oportunidade_central": { "titulo": "Página local + rotina de avaliações", "texto": "Uma landing de alongamento no Cambuí e 3 avaliações por semana colocam o perfil no patamar dos líderes." },
+    "frase_destaque": "Primeiro proteger o perfil (nome e NAP); depois acelerar avaliações e atividade. Nessa ordem."
+  },
+
+  "evidencias": [
+    { "item": "Nome no Google", "situacao": "Studio Exemplo Unhas | Alongamento em Gel | Manicure Cambuí", "status": "Divergente" },
+    { "item": "Endereço", "situacao": "R. Exemplo, 100 - Cambuí, Campinas - SP", "status": "Verificado" },
+    { "item": "Telefone", "situacao": "+55 19 90000-0000 (WhatsApp)", "status": "Verificado" },
+    { "item": "Categoria principal", "situacao": "Manicure", "status": "Verificado" },
+    { "item": "Categorias adicionais", "situacao": "Salão de manicure e pedicure", "status": "Verificado" },
+    { "item": "Nota e avaliações", "situacao": "4,8 - 68 avaliações", "status": "Verificado" },
+    { "item": "Horários", "situacao": "Seg-sáb 09:00-19:00", "status": "Verificado" },
+    { "item": "Site / WhatsApp", "situacao": "Linktree com WhatsApp; sem página própria", "status": "Verificado" },
+    { "item": "Serviços, descrição e atributos", "situacao": "Não acessíveis nesta coleta", "status": "Não verificado" },
+    { "item": "Fotos, vídeos e Posts", "situacao": "Não acessíveis nesta coleta", "status": "Não verificado" }
+  ],
+
+  "fundamentos": {
+    "titulo": "Antes de crescer, o perfil precisa representar uma única marca",
+    "cards": [
+      { "rotulo": "Confirmado", "titulo": "Endereço e telefone coerentes", "texto": "Google, Instagram e CNPJ convergem para o mesmo endereço e WhatsApp." },
+      { "rotulo": "Atenção", "titulo": "Nome do perfil", "texto": "Termos de serviço e bairro no nome não aparecem na fachada nem no cadastro empresarial." },
+      { "rotulo": "Categoria", "titulo": "Manicure", "texto": "Mesma categoria principal dos três primeiros; adicional coerente com o serviço." }
+    ],
+    "acoes": [
+      "Ajustar o nome do perfil para o nome real da marca ou oficializar o nome longo na fachada e no site.",
+      "Padronizar endereço com complemento e CEP em Google, Instagram e diretórios.",
+      "Adicionar a categoria \"Serviço de alongamento de unhas\" se estiver disponível e for serviço real.",
+      "Cadastrar horários especiais de feriados para evitar avaliações de \"fechado\"."
+    ],
+    "regra": "Nome, endereço, telefone e horários devem ser idênticos no Google e em todo ativo público da empresa. Categoria descreve o que a empresa é, não serve só como palavra-chave.",
+    "destaque": {
+      "problema": "nome do perfil com palavras-chave.",
+      "impacto": "risco de edição automática ou suspensão do perfil.",
+      "acao": "alinhar o nome ao nome real usado na fachada e no cadastro."
+    }
+  },
+
+  "conversao": {
+    "titulo": "A especialidade precisa ficar clara antes do primeiro contato",
+    "tese": "O cliente que busca alongamento no Cambuí precisa ver, ainda no Google, técnica, preço de referência, fotos reais e como agendar. Cada dúvida que o perfil não responde vira um clique para o concorrente.",
+    "validar": ["Serviços nativos com nome e descrição", "Descrição com especialidade e bairro", "Atributos de pagamento e agendamento", "Link do perfil com UTM", "Mensagens do Google ativadas ou não"],
+    "orientar": ["Alongamento em gel e fibra como carro-chefe", "Localização no Cambuí e estacionamento", "Agendamento pelo WhatsApp em 1 clique", "Fotos reais de resultado", "Tempo médio e manutenção"],
+    "cards": [
+      { "rotulo": "Problema", "titulo": "Link para Linktree", "texto": "O perfil manda para um agregador de links, sem página própria do serviço." },
+      { "rotulo": "Impacto", "titulo": "Relevância e conversão menores", "texto": "Sem página local o Google tem menos sinal sobre o serviço e o cliente dá mais um passo até agendar." },
+      { "rotulo": "Ação", "titulo": "Landing de alongamento", "texto": "Página \"Alongamento de unhas no Cambuí\" com fotos, avaliações, mapa e WhatsApp, linkada com UTM." }
+    ]
+  },
+
+  "reputacao": {
+    "titulo": "A nota é forte; a vantagem depende de recência e volume",
+    "metricas": [
+      { "rotulo": "Avaliações", "valor": "4,8 / 68", "legenda": "nota e volume verificados" },
+      { "rotulo": "Respostas", "valor": "~60%", "legenda": "últimas 20 avaliações" },
+      { "rotulo": "Atividade", "valor": "N/V", "legenda": "fotos e posts não verificados" }
+    ],
+    "rotina": [
+      "Enviar link curto de avaliação no WhatsApp ao final de cada atendimento, sem incentivo.",
+      "Pedir que a cliente conte qual serviço fez, sem ditar texto.",
+      "Responder 100% das avaliações em até 48 h, citando o serviço.",
+      "Subir 3 fotos reais de resultado por semana.",
+      "Publicar 1 post por semana com foto, serviço, bairro e CTA."
+    ],
+    "temas": ["Alongamento em gel", "Fibra de vidro", "Manutenção", "Esmaltação em gel", "Biossegurança", "Como agendar"],
+    "destaque": "Meta de ritmo: 3 avaliações por semana durante 90 dias leva o perfil a ~105 avaliações, no patamar do líder do bairro."
+  },
+
+  "comparativo": {
+    "titulo": "A nota compete; o volume ainda não",
+    "busca": "alongamento de unhas cambuí campinas",
+    "linhas": [
+      { "empresa": "Studio Exemplo Unhas", "regiao": "Cambuí", "nota_avaliacoes": "4,8 / 68", "criterio": "Perfil auditado - manicure e alongamento", "auditado": true },
+      { "empresa": "Concorrente A", "regiao": "Cambuí", "nota_avaliacoes": "4,9 / 102", "criterio": "Mesma categoria e bairro; site próprio" },
+      { "empresa": "Concorrente B", "regiao": "Cambuí", "nota_avaliacoes": "5,0 / 44", "criterio": "Mesma categoria; foco em alongamento" },
+      { "empresa": "Concorrente C", "regiao": "Centro", "nota_avaliacoes": "4,7 / 210", "criterio": "Salão com esmalteria; alto volume" }
+    ],
+    "leitura": { "titulo": "Vantagem", "texto": "Nota competitiva e WhatsApp direto; jornada mais curta que a da maioria da amostra." },
+    "lacuna": { "titulo": "Densidade de prova social", "texto": "Mediana de 102 avaliações entre os concorrentes; o perfil tem 68 e precisa de recência." }
+  },
+
+  "prioridades": {
+    "titulo": "Primeiro proteger o perfil; depois escalar prova e conteúdo",
+    "acoes": [
+      { "prioridade": "P0", "risco": true, "titulo": "Alinhar o nome do perfil", "texto": "Usar o nome real da marca ou oficializar o nome longo na fachada e no site antes de qualquer outra ação.", "esforco": "Baixa", "prazo": "Semana 1" },
+      { "prioridade": "P0", "titulo": "Auditar recursos nativos", "texto": "Com acesso ao painel, revisar serviços, descrição, atributos, fotos e posts e registrar baseline.", "esforco": "Baixa", "prazo": "Semana 1" },
+      { "prioridade": "P1", "titulo": "Cadastrar serviços e descrição", "texto": "Um serviço por técnica, com descrição curta citando o Cambuí; descrição de 750 caracteres.", "esforco": "Baixa", "prazo": "Semana 1" },
+      { "prioridade": "P1", "titulo": "Rotina de avaliações e respostas", "texto": "Link curto no pós-atendimento, meta de 3/semana e resposta a 100% em 48 h.", "esforco": "Baixa", "prazo": "Semanas 1-4" },
+      { "prioridade": "P1", "titulo": "UTM e landing local", "texto": "Trocar o Linktree por página de alongamento no Cambuí e rastrear com UTM.", "esforco": "Média", "prazo": "Semana 2" },
+      { "prioridade": "P2", "titulo": "Biblioteca visual", "texto": "Fotos semanais de resultados, ambiente e equipe; 1 vídeo curto por mês.", "esforco": "Média", "prazo": "Semana 3" },
+      { "prioridade": "P2", "titulo": "Rotina de posts", "texto": "1 post por semana alternando resultado, cuidado, agenda e bastidor.", "esforco": "Baixa", "prazo": "Semanas 3-4" },
+      { "prioridade": "P3", "titulo": "Mensuração mensal", "texto": "Grid de posição na palavra-alvo e insights do painel comparados ao baseline.", "esforco": "Média", "prazo": "Semana 4" }
+    ]
+  },
+
+  "plano_30_dias": {
+    "titulo": "Quatro semanas para proteger a base e começar a subir",
+    "semanas": [
+      { "titulo": "Semana 1 - Fundação", "tarefas": ["Corrigir o nome do perfil e padronizar o NAP.", "Revisar categorias, serviços, descrição e atributos no painel.", "Registrar baseline: posição na busca-alvo e insights."] },
+      { "titulo": "Semana 2 - Conversão e prova", "tarefas": ["Publicar landing de alongamento no Cambuí com UTM no perfil.", "Ativar rotina de pedido de avaliação no WhatsApp.", "Responder todas as avaliações pendentes."] },
+      { "titulo": "Semana 3 - Conteúdo", "tarefas": ["Subir 10 fotos reais (resultado, ambiente, equipe, fachada).", "Publicar 2 posts com serviço, bairro e CTA.", "Gravar 1 vídeo curto do processo."] },
+      { "titulo": "Semana 4 - Autoridade e mensuração", "tarefas": ["Corrigir citações em diretórios e Instagram.", "Medir posição em grid e comparar com o baseline.", "Planejar o ciclo de conteúdo do mês seguinte."] }
+    ],
+    "meta": "Meta para a próxima auditoria: cobertura acima de 90% com acesso ao painel e índice acima de 85."
+  },
+
+  "ativos": {
+    "titulo": "Conteúdo útil reduz dúvida e reforça confiança, sem promessas",
+    "cards": [
+      { "titulo": "Landing local", "texto": "Página do serviço principal com bairro, fotos, avaliações, mapa e WhatsApp." },
+      { "titulo": "Biblioteca visual", "texto": "Resultados reais, ambiente, equipe e biossegurança, renovados toda semana." },
+      { "titulo": "Rotina de reputação", "texto": "Pedido ético, respostas personalizadas e acompanhamento de recência." }
+    ],
+    "ideias_posts": ["Resultado da semana em alongamento em gel", "Gel ou fibra: qual escolher", "Quanto tempo dura e quando fazer manutenção", "Cuidados em casa depois do alongamento", "Biossegurança: como esterilizamos", "Agenda da semana com horários livres", "Conheça a equipe", "Como agendar pelo WhatsApp"],
+    "checklist_visual": ["Fachada e referência de chegada", "Recepção e ambiente", "Profissional atendendo", "Resultados em boa luz", "Materiais e esterilização", "Antes e depois autorizado", "Vídeo curto do processo", "Logo e capa atualizados"],
+    "destaque": "Cada ativo vira evidência pesquisável: o Google entende melhor o serviço e o cliente decide mais rápido."
+  },
+
+  "veredito": {
+    "titulo": "A base local existe. O próximo salto é proteger, provar e medir.",
+    "texto": "O perfil tem reputação e jornada de contato acima da média do bairro. O ganho agora vem de remover o risco do nome, igualar o volume de avaliações dos líderes e mostrar atividade real no próprio Google.",
+    "proximo_passo": { "titulo": "Corrigir nome e validar painel", "texto": "Ajustar o nome e liberar acesso ao painel para auditar os recursos nativos." },
+    "oportunidade": { "titulo": "Liderar o Cambuí em alongamento", "texto": "Página local + ritmo de avaliações + fotos semanais é a combinação que os concorrentes ainda não têm." },
+    "limitacoes": ["Não houve acesso ao painel administrativo.", "Serviços, descrição e atributos não foram verificados diretamente.", "Fotos, vídeos e posts não foram auditados integralmente.", "Posição observada em uma busca, sem grid geolocalizado."],
+    "fontes": ["https://maps.app.goo.gl/EXEMPLO", "https://www.instagram.com/exemplo", "https://casadosdados.com.br/solucao/cnpj/exemplo"]
+  }
+}
