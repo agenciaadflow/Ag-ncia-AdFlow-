@@ -4,7 +4,7 @@ logo=open(f"{LP}/logo.b64").read().strip()
 foto=open(f"{LP}/foto_hero.b64").read().strip()
 laudo=open(f"{LP}/laudo-01.b64").read().strip()
 HANDLE="@eu_josaniaszadura"
-CSS='''<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,700&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+CSS='''<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,700&family=Jost:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:1080px;height:1350px;overflow:hidden}
@@ -107,5 +107,8 @@ S[8]=f'''<div class="c gold">
 <img src="{logo}" style="position:absolute;right:80px;bottom:56px;height:70px;background:#fff;border-radius:14px;padding:10px 18px">
 <div class="foot" style="right:auto"><span>{HANDLE}</span></div>
 </div>'''
+import sys as _s; _s.path.insert(0,D)
+from cards_reais import S2,S3,S4,S5,S6
+S[2],S[3],S[4],S[5],S[6]=S2(foot),S3(foot),S4(foot),S5(foot),S6(foot)
 for n,v in S.items():
     open(f"{D}/card{n}.html","w",encoding="utf-8").write("<!doctype html><html lang=pt-BR><head><meta charset=utf-8>"+CSS+"</head><body>"+v+"</body></html>")
