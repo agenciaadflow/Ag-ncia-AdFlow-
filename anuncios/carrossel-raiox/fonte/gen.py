@@ -31,13 +31,13 @@ S[1]=f'''<div class="c night" style="padding:0">
 <div style="position:absolute;inset:0;background:linear-gradient(0deg,#0B0C0F 36%,rgba(11,12,15,0) 62%),linear-gradient(90deg,#0B0C0F 8%,rgba(11,12,15,0) 45%)"></div>
 <div style="position:absolute;left:80px;right:80px;top:700px">
 <div style="width:120px;height:6px;background:#D8B566;margin-bottom:34px"></div>
-<h1 style="font-size:96px">Quer vender mais com o <span class="it" style="font-size:1.08em">Google Meu Negócio?</span></h1>
-<p class="cap" style="color:#C9CCD4;font-size:36px">No último card, como pedir o <b style="color:#fff">Raio-X grátis</b> do seu perfil.</p>
+<h1 style="font-size:92px">Tem cliente procurando você no Google. <span class="it" style="font-size:1.08em">Ele está te achando?</span></h1>
+<p class="cap" style="color:#C9CCD4;font-size:36px">Arrasta até o fim e peça o <b style="color:#fff">Raio-X grátis</b> do seu perfil.</p>
 </div>
 <div class="foot" style="left:80px;right:80px"><span>{HANDLE}</span><span class="pg">arrasta →</span></div>
 </div>'''
 S[2]=f'''<div class="c light">
-<h1>Seu próximo cliente pode estar pesquisando <span class="u">agora.</span></h1>
+<h1>Neste minuto, alguém digitou <span class="u">o que você vende.</span></h1>
 <div class="card" style="margin-top:70px;overflow:hidden">
 <div style="display:flex;gap:16px;align-items:center;padding:28px 34px;border-bottom:2px solid #E3E1DA;font-size:34px;color:#5C5F68">{SEARCH}seu serviço perto de mim</div>
 <div style="height:300px;background:repeating-linear-gradient(0deg,#EEF0EA 0 2px,transparent 2px 60px),repeating-linear-gradient(90deg,#EEF0EA 0 2px,transparent 2px 80px),#F7F8F4;position:relative">
@@ -45,20 +45,20 @@ S[2]=f'''<div class="c light">
 <div style="position:absolute;left:640px;top:60px">{PIN.replace('class="pin"','class="pin" style="color:#C0392B"')}</div><div style="position:absolute;left:780px;top:190px">{PIN.replace('class="pin"','class="pin" style="color:#C0392B"')}</div><div style="position:absolute;left:300px;top:200px">{PIN.replace('class="pin"','class="pin" style="color:#C0392B"')}</div>
 </div>
 </div>
-<p class="cap">Ele procura o seu serviço e a sua cidade. O Google mostra <b>todas as opções na mesma tela.</b></p>
+<p class="cap">O Google abriu o mapa com as opções. <b>A sua empresa estava lá?</b></p>
 {foot(2)}</div>'''
 S[3]=f'''<div class="c night">
-<h1>Ele compara <span class="it">antes de escolher.</span></h1>
+<h1>Ninguém escolhe <span class="it">no escuro.</span></h1>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:70px">
 <div class="card" style="padding:34px"><div style="font-size:24px;letter-spacing:.12em;font-weight:700;color:#1E8E5A">1º NO MAPS</div><div style="font-size:40px;font-weight:700;margin-top:10px">Concorrente</div><div style="font-size:30px;color:#5C5F68;margin-top:6px">4,6 ★ (205)</div>
 <div style="font-size:30px;margin-top:26px;line-height:1.7"><span class="ok">✓</span> Fotos recentes<br><span class="ok">✓</span> Site e WhatsApp<br><span class="ok">✓</span> Avaliações respondidas</div></div>
 <div class="card" style="padding:34px;background:#FDECEA"><div style="font-size:24px;letter-spacing:.12em;font-weight:700;color:#C0392B">16º NO MAPS</div><div style="font-size:40px;font-weight:700;margin-top:10px">Loja do caso</div><div style="font-size:30px;color:#5C5F68;margin-top:6px">4,7 ★ (35)</div>
 <div style="font-size:30px;margin-top:26px;line-height:1.7"><span class="red">✕</span> Fotos antigas<br><span class="red">✕</span> Sem site e WhatsApp<br><span class="red">✕</span> 0 respostas</div></div>
 </div>
-<p class="cap" style="color:#C9CCD4">Caso real: a <b style="color:#fff">melhor nota da região</b> escondida em 16º. Qual dos dois você chamaria?</p>
+<p class="cap" style="color:#C9CCD4">Caso real: a <b style="color:#fff">melhor nota da região</b> perdendo cliente em 16º. Nota boa sozinha não vende.</p>
 {foot(3)}</div>'''
 S[4]=f'''<div class="c light">
-<h1>Mostre o que <span class="it">você vende.</span></h1>
+<h1>O Google não adivinha. <span class="it">Ele lê o seu perfil.</span></h1>
 <div class="card" style="margin-top:70px;padding:44px">
 <div style="font-size:44px;font-weight:600">Sua empresa</div>
 <div style="font-size:30px;color:#5C5F68;margin-top:6px">4,8 ★ (120)</div>
@@ -66,28 +66,28 @@ S[4]=f'''<div class="c light">
 <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
 <span style="font-size:28px;border:2px solid #E3E1DA;border-radius:999px;padding:10px 22px">Serviço 1</span><span style="font-size:28px;border:2px solid #E3E1DA;border-radius:999px;padding:10px 22px">Serviço 2</span><span style="font-size:28px;border:2px solid #E3E1DA;border-radius:999px;padding:10px 22px">Serviço 3</span><span style="font-size:28px;border:2px solid #E3E1DA;border-radius:999px;padding:10px 22px">+ descrição</span>
 </div></div>
-<p class="cap">Se o Google não entende o que você vende, ele <b>mostra o concorrente</b> no seu lugar.</p>
+<p class="cap">Categoria errada ou serviço faltando? O Google <b>entrega o seu cliente pro concorrente.</b></p>
 {foot(4)}</div>'''
 S[5]=f'''<div class="c gold">
-<h1>Facilite o <span class="it">contato.</span></h1>
+<h1>Cliente pronto pra comprar <span class="it">não espera.</span></h1>
 <div class="card" style="margin-top:70px;padding:20px 44px;font-size:34px">
 <div style="display:flex;gap:24px;align-items:center;padding:24px 0;border-bottom:2px solid #E3E1DA">{PIN}Endereço certo e fácil de achar</div>
 <div style="display:flex;gap:24px;align-items:center;padding:24px 0;border-bottom:2px solid #E3E1DA"><span style="font-size:38px">🕘</span><span class="ok">Aberto agora</span>&nbsp;· horário atualizado</div>
 <div style="display:flex;gap:24px;align-items:center;padding:24px 0;border-bottom:2px solid #E3E1DA"><span style="font-size:38px">💬</span>Botão de WhatsApp</div>
 <div style="display:flex;gap:24px;align-items:center;padding:24px 0"><span style="font-size:38px">🌐</span>Site ou página do serviço</div>
 </div>
-<p class="cap">Quem já quer comprar precisa chegar até você <b>em um toque.</b></p>
+<p class="cap">Horário errado ou sem WhatsApp? <b>Ele liga pro vizinho.</b></p>
 {foot(5)}</div>'''
 S[6]=f'''<div class="c light">
-<h1>Fotos e avaliações <span class="it">ajudam a vender.</span></h1>
+<h1>Perfil parado <span class="it">parece empresa fechada.</span></h1>
 <div class="card" style="margin-top:64px;padding:40px 44px">
 <div style="display:flex;align-items:baseline;gap:18px"><span style="font-size:96px;font-weight:800">4,9</span><span style="font-size:40px;color:#E8A317">★★★★★</span></div>
 <div style="margin-top:22px;border-left:6px solid #D8B566;padding:6px 0 6px 24px;font-size:28px;line-height:1.4;color:#3c3f47"><b style="color:#0E0F12">Resposta do proprietário</b><br>Obrigada pela visita, Ana! Que bom que gostou do atendimento aqui no bairro. Volte sempre!</div>
 </div>
-<p class="cap">Fotos reais toda semana. Toda avaliação respondida. <b>Do jeito certo:</b> sem comprar avaliação.</p>
+<p class="cap">Foto de 2 anos atrás e avaliação sem resposta afastam cliente. <b>Do jeito certo:</b> movimento real, nada comprado.</p>
 {foot(6)}</div>'''
 S[7]=f'''<div class="c night">
-<h1>Veja o que melhorar <span class="it">no seu.</span></h1>
+<h1>Quanto o seu Google <span class="it">vale hoje?</span></h1>
 <div style="display:grid;grid-template-columns:420px 1fr;gap:44px;margin-top:66px;align-items:center">
 <img src="{laudo}" style="width:420px;border-radius:14px;box-shadow:0 30px 60px -20px rgba(0,0,0,.9);border:2px solid #2A2D35">
 <div style="font-size:33px;line-height:1.45;color:#C9CCD4">
@@ -97,13 +97,13 @@ S[7]=f'''<div class="c night">
 <p>{PIN.replace('class="pin"','class="pin" style="width:22px;height:30px;vertical-align:-4px"')} quem está na sua frente</p>
 <p>{PIN.replace('class="pin"','class="pin" style="width:22px;height:30px;vertical-align:-4px"')} o que fazer primeiro</p>
 </div></div>
-<p class="cap" style="color:#C9CCD4">Feito por quem cuida de Google Meu Negócio todo dia. <b style="color:#fff">Grátis.</b></p>
+<p class="cap" style="color:#C9CCD4">Análise feita a mão pelo Método Pin Dourado. <b style="color:#fff">Grátis.</b></p>
 {foot(7)}</div>'''
 S[8]=f'''<div class="c gold">
-<h1 style="font-size:80px">Quer o Raio-X do Google Meu Negócio da sua empresa <span class="it">grátis?</span></h1>
+<h1 style="font-size:84px">Descubra o que está escondendo a sua empresa <span class="it">no Google.</span></h1>
 <div style="font-size:46px;font-weight:600;margin-top:90px">Comente</div>
 <div style="display:inline-block;margin-top:18px;background:#0B0C0F;color:#D8B566;font-size:170px;font-weight:800;line-height:1;padding:30px 50px;border-radius:24px;transform:rotate(-2deg)">RAIO-X</div>
-<div style="font-size:46px;font-weight:600;margin-top:44px">que eu te chamo no direct.</div>
+<div style="font-size:46px;font-weight:600;margin-top:44px">e receba o seu Laudo no direct.</div>
 <img src="{logo}" style="position:absolute;right:80px;bottom:56px;height:70px;background:#fff;border-radius:14px;padding:10px 18px">
 <div class="foot" style="right:auto"><span>{HANDLE}</span></div>
 </div>'''
