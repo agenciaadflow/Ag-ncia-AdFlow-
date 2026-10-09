@@ -1,10 +1,12 @@
 /* AdFlow · WhatsApp, rastreamento e formulário do diagnóstico */
 var WHATS_NUMERO = "5545999407123";
 
-/* Rastreamento: quando os IDs forem instalados no <head> (fbq e gtag), os eventos passam a ser enviados. */
+/* Rastreamento: quando os IDs forem instalados no <head> (fbq e gtag), os eventos passam a ser enviados.
+   Eventos: Contact (todo clique de WhatsApp), Schedule (botões de agendar/apresentação), Lead (envio do formulário do diagnóstico). */
 function track(evento, dados) {
   try { if (typeof window.fbq === "function") window.fbq("track", evento, dados || {}); } catch (e) {}
-  try { if (typeof window.gtag === "function") window.gtag("event", evento === "Contact" ? "contact" : evento, dados || {}); } catch (e) {}
+  var ga = { Contact: "contact", Lead: "generate_lead", Schedule: "schedule" };
+  try { if (typeof window.gtag === "function") window.gtag("event", ga[evento] || evento, dados || {}); } catch (e) {}
 }
 
 function whatsLink(msg) {
@@ -27,7 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
       el.href = whatsLink(msg);
       el.target = "_blank";
       el.rel = "noopener";
-      el.addEventListener("click", function () { track("Contact", { origem: msg }); });
+      el.addEventListener("click", function () {
+        track("Contact", { origem: msg });
+        /* Botões de plano e de agendamento também contam como agendamento. */
+        if (/apresentação|agendar|reunião/i.test(msg)) track("Schedule", { origem: msg });
+      });
     } else {
       el.addEventListener("click", function () { whats(msg); });
     }
@@ -94,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Já investe em anúncios? " + (anuncia ? anuncia.value : "-"),
         "Está disposto a investir em anúncios? " + (disposto ? disposto.value : "-")
       ];
+      track("Lead", { content_name: "Diagnóstico gratuito", segmento: v("d-segmento") || "-" });
       whats(linhas.join("\n"));
     });
   }
