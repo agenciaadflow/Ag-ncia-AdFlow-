@@ -68,6 +68,16 @@ body{{width:1080px;height:1350px;overflow:hidden;font-family:Inter,sans-serif}}
 .thumb i{{position:absolute;left:0;right:0;bottom:0;background:{preto};color:#fff;font:700 13px Inter;font-style:normal;padding:6px 8px}}
 .peca{{position:absolute;top:38px;left:0;right:0;text-align:center;font-size:84px}}
 .nota{{margin-top:12px;color:#fff;font:600 20px Inter;text-shadow:0 1px 4px rgba(0,0,0,.8)}}
+.gcard{{background:#fff;border-radius:28px;padding:26px 40px 30px;box-shadow:0 18px 50px rgba(0,0,0,.4);margin-bottom:22px;display:flex;flex-direction:column;align-items:center;gap:18px;width:800px}}
+.gbig{{font:600 104px Inter;letter-spacing:-4px;line-height:1}}
+.gsearch{{width:100%;border:1px solid #dfe1e5;border-radius:40px;padding:16px 28px;font:500 30px Inter;color:#202124;box-shadow:0 2px 10px rgba(0,0,0,.12);text-align:left}}
+.gsearch b{{color:#1a73e8;font-weight:400}}
+.mapa{{border-radius:24px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.4);margin-bottom:22px;background:#fff}}
+.grade{{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:920px;margin-top:16px}}
+.tile{{background:#fff;border-radius:22px;padding:22px 16px;text-align:center;font:800 32px Inter;color:#0E0E0E;line-height:1.15;box-shadow:0 10px 30px rgba(0,0,0,.3)}}
+.tile span{{display:block;font-size:68px;margin-bottom:8px}}
+.acoes{{background:#fff;border-radius:28px;padding:22px 46px;display:flex;gap:56px;align-items:center;margin-bottom:22px;box-shadow:0 18px 50px rgba(0,0,0,.4);font-size:84px}}
+.acoes .cur{{font-size:130px;filter:drop-shadow(0 6px 14px rgba(234,67,53,.45))}}
 .chip{{display:inline-block;border:1px solid #dadce0;border-radius:20px;padding:6px 14px;font-size:15px;margin-right:8px}}
 .circ{{outline:6px solid {ouro};outline-offset:6px;border-radius:16px}}
 """
@@ -126,6 +136,28 @@ def painel_loja(m, forte):
     return google(LOJA, corpo, 820)
 
 
+def logo_google(classe="glogo gbig"):
+    return f'<div class="{classe}">' + "".join(f"<span>{c}</span>" for c in "Google") + "</div>"
+
+
+def busca(texto):
+    return f'<div class="gcard">{logo_google()}<div class="gsearch">🔍&nbsp; {texto}<b>|</b></div></div>'
+
+
+def mapa():
+    """Mapa ilustrado com o pin vermelho do Google Maps em cima da loja."""
+    ruas = "".join(f'<line x1="{x}" y1="0" x2="{x + 60}" y2="300" stroke="#fff" stroke-width="16"/>' for x in (90, 300, 520, 720))
+    ruas += "".join(f'<line x1="0" y1="{y}" x2="840" y2="{y - 30}" stroke="#fff" stroke-width="16"/>' for y in (80, 190, 280))
+    return f"""<div class="mapa"><svg width="840" height="300" viewBox="0 0 840 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="840" height="300" fill="#e8eef2"/><rect x="560" y="200" width="160" height="90" rx="10" fill="#cfe8c6"/>
+<path d="M0 240 C200 210 260 300 420 270" stroke="#aecbfa" stroke-width="26" fill="none"/>{ruas}
+<g transform="translate(420 120)"><ellipse cx="0" cy="62" rx="22" ry="7" fill="rgba(0,0,0,.25)"/>
+<path d="M0 60 C-10 30 -46 10 -46 -20 A46 46 0 1 1 46 -20 C46 10 10 30 0 60Z" fill="#EA4335"/><circle cx="0" cy="-20" r="17" fill="#A50E0E"/></g>
+<g transform="translate(476 70)"><rect width="340" height="74" rx="14" fill="#fff" stroke="#dadce0"/>
+<text x="20" y="32" font-family="Inter" font-weight="800" font-size="24" fill="#202124">Aurora Moda</text>
+<text x="20" y="60" font-family="Inter" font-size="19" fill="#5f6368">4,9 <tspan fill="#fbbc04">★★★★★</tspan> · Loja de roupas</text></g></svg></div>"""
+
+
 def slides(m):
     nome, perfil = CRIADORA["nome"], CRIADORA["perfil"]
     perfil_pg = f"""<div class="mock" style="width:760px">
@@ -133,14 +165,14 @@ def slides(m):
 <div style="padding:20px 30px"><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">YouTube</span>
 <div class="src" style="margin:18px 0 6px;font-weight:700">Posts mais recentes</div><div class="posts">{miniaturas()}</div></div></div>"""
     return [
-        f'<img class="selo canto" src="{m["sz_uri"]}"><div class="box ouro sm">🚨 Novidade no Google!</div><div class="box escuro big">Quem tem <span class="hl">muitos seguidores</span> agora ganha uma página no Google</div>',
-        '<div class="box branco big">Mas e quem tem <span class="hla">LOJA?</span> 🤔</div><div class="gap"></div><div class="box escuro sm">Vou te mostrar de um jeito simples 👇</div>',
+        f'{busca("Novidade no Google")}<div class="box ouro sm">🚨 Novidade no Google!</div><div class="box escuro big">Quem tem <span class="hl">muitos seguidores</span> agora ganha uma página no Google</div>',
+        f'{busca("loja de roupas perto de mim")}<div class="box branco big">Mas e quem tem <span class="hla">LOJA?</span> 🤔</div><div class="box escuro sm">Vou te mostrar de um jeito simples 👇</div>',
         f'<div class="box escuro sm">Quem cria conteúdo (+10 mil seguidores) aparece assim 👇</div>{perfil_pg}{NOTA}',
-        '<div class="box ouro sm">E a sua loja? 🛍️</div><div class="box escuro">Ela aparece pelo <span class="hl">Google Meu Negócio</span> 📍</div><div class="gap"></div><div class="box branco sm">É aquela ficha com fotos, endereço, horário e avaliações</div>',
+        f'{mapa()}<div class="box ouro sm">E a sua loja? 🛍️</div><div class="box escuro">Ela aparece pelo <span class="hl">Google Meu Negócio</span> 📍</div><div class="gap"></div><div class="box branco sm">É aquela ficha com fotos, endereço, horário e avaliações</div>',
         f'<div class="box escuro sm">Ficha abandonada 😬<br><span class="hl">a cliente desiste e vai na concorrente</span></div>{painel_loja(m, False)}{NOTA}',
         f'<div class="box escuro sm">Ficha caprichada 🤩<br><span class="hl">a cliente confia e já chama no WhatsApp</span></div>{painel_loja(m, True)}{NOTA}',
-        '<div class="box escuro sm">Como deixar a sua assim:</div><div class="box branco sm" style="text-align:left;font-size:40px;line-height:1.5">✅ Fotos bonitas das roupas<br>✅ Horário e WhatsApp certos<br>✅ Pedir avaliação pras clientes<br>✅ Postar novidades toda semana</div>',
-        '<div class="box branco big">Gostou do conteúdo?</div><div class="box lima big">Já curte esse post ❤️</div><div class="gap"></div><div class="box escuro sm">e manda pra uma amiga que tem loja 📲</div>',
+        '<div class="box escuro sm">Como deixar a sua assim:</div><div class="grade"><div class="tile"><span>📸</span>Fotos bonitas das roupas</div><div class="tile"><span>🕒</span>Horário e WhatsApp certos</div><div class="tile"><span>⭐</span>Pedir avaliação pras clientes</div><div class="tile"><span>📢</span>Postar novidades toda semana</div></div>',
+        '<div class="acoes"><span class="cur">❤️</span><span>💬</span><span>📲</span><span>🔖</span></div><div class="box branco big">Gostou do conteúdo?</div><div class="box lima big">Já curte esse post ❤️</div><div class="gap"></div><div class="box escuro sm">e manda pra uma amiga que tem loja 📲</div>',
         f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer ajuda pra deixar a ficha da sua loja assim? Comenta <span class="hla">GOOGLE</span> 💬</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
     ]
 
