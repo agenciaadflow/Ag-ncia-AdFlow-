@@ -1,10 +1,12 @@
 {
   "nome": "Josânia Szadura",
-  "assinatura": "JOSÂNIA SZADURA | TRÁFEGO & PERFORMANCE",
+  "assinatura": "TRÁFEGO PAGO • PERFORMANCE DIGITAL",
   "slogan": "Estratégia • Tráfego • Resultados",
   "perfil": "@josania_performance_digital",
-  "cor_fundo": "#0A0D14",
-  "cor_primaria": "#0057FF",
-  "cor_destaque": "#D4A72C",
-  "fonte": "Inter"
+  "cor_fundo": "#0E0E0E",
+  "cor_primaria": "#D7F75B",
+  "cor_destaque": "#C6A45C",
+  "fonte": "Inter",
+  "logo": "logo-szadura.png",
+  "selo": "selo-szadura.png"
 }

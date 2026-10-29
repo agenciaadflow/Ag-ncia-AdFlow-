@@ -23,7 +23,7 @@ def data_uri(caminho):
 
 
 def css(m, foto):
-    preto, azul, ouro = m["cor_fundo"], m["cor_primaria"], m["cor_destaque"]
+    preto, lima, ouro = m["cor_fundo"], m["cor_primaria"], m["cor_destaque"]
     fundo = f"url('{foto}') center 0% / cover no-repeat" if foto else "linear-gradient(160deg,#cfd6e4,#8e9ab3)"
     return f"""
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap');
@@ -32,20 +32,23 @@ body{{width:1080px;height:1350px;overflow:hidden;font-family:Inter,sans-serif}}
 .slide{{position:relative;width:1080px;height:1350px;background:{fundo};background-color:#0A0D14;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 64px 120px}}
 .slide::before{{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,13,20,.35) 0%,rgba(10,13,20,0) 14%,rgba(10,13,20,0) 45%,rgba(10,13,20,.55) 100%)}}
 .topo{{position:absolute;top:0;left:0;right:0;height:70px;background:{preto};color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 44px;font:800 21px Inter;letter-spacing:1.5px;z-index:2}}
-.topo b{{color:{ouro}}}
+.topo b{{color:{lima}}}
+.topo img{{height:40px;margin-right:22px;vertical-align:middle}}
+.selo{{width:230px;height:230px;margin-bottom:26px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}}
+.selo.canto{{position:absolute;bottom:100%;right:0;margin-bottom:24px;width:200px;height:200px;z-index:2}}
 .rodape{{position:absolute;bottom:0;left:0;right:0;height:62px;background:{preto};color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 44px;font:600 20px Inter;z-index:2}}
-.rodape b{{color:{ouro};font-weight:800}}
+.rodape b{{color:{lima};font-weight:800}}
 .ph{{position:absolute;top:320px;left:0;right:0;text-align:center;font:800 34px Inter;color:#fff;letter-spacing:4px;opacity:.85}}
 .stack{{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%}}
 .box{{text-align:center;line-height:1.14;padding:20px 32px;font-size:54px;font-weight:800;letter-spacing:-.5px}}
 .escuro{{background:{preto};color:#fff}}
-.azul{{background:{azul};color:#fff}}
+.lima{{background:{lima};color:{preto}}}
 .ouro{{background:{ouro};color:{preto}}}
 .branco{{background:#fff;color:{preto}}}
 .sm{{font-size:42px}}
 .xs{{font-size:25px;font-weight:600;padding:8px 18px}}
-.hl{{color:{ouro}}}
-.hla{{color:{azul}}}
+.hl{{color:{lima}}}
+.hla{{background:{lima};color:{preto};padding:0 10px}}
 .gap{{height:14px}}
 .big{{font-size:72px}}
 /* mockups */
@@ -64,13 +67,13 @@ body{{width:1080px;height:1350px;overflow:hidden;font-family:Inter,sans-serif}}
 .thumb{{width:150px;height:200px;border-radius:12px;background:{fundo};background-size:cover;position:relative;overflow:hidden}}
 .thumb i{{position:absolute;left:0;right:0;bottom:0;background:{preto};color:#fff;font:700 13px Inter;font-style:normal;padding:6px 8px}}
 .chip{{display:inline-block;border:1px solid #dadce0;border-radius:20px;padding:6px 14px;font-size:15px;margin-right:8px}}
-.circ{{outline:6px solid {azul};outline-offset:6px;border-radius:16px}}
+.circ{{outline:6px solid {ouro};outline-offset:6px;border-radius:16px}}
 """
 
 
 def pagina(m, n, conteudo, sem_foto):
     ph = '<div class="ph">SUA FOTO AQUI</div>' if sem_foto else ""
-    topo = m["assinatura"].replace(" | ", " | <b>", 1) + "</b>"
+    topo = f'<img src="{m["logo_uri"]}"><b>{m["assinatura"]}</b>'
     return (
         f'<div class="slide">{ph}<div class="topo"><span>{topo}</span><span>{n}/9</span></div>'
         f'<div class="stack">{conteudo}</div>'
@@ -103,20 +106,20 @@ def slides(m):
 <div style="background:{m['cor_fundo']};color:#fff;padding:28px 30px"><div style="font:800 40px Inter">{nome}</div><div style="font-size:18px;opacity:.8">{perfil} · Perfil de criador</div></div>
 <div style="padding:20px 30px"><span class="chip">+ Seguir no Google</span><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">YouTube</span>
 <div class="src" style="margin:18px 0 6px;font-weight:700">Posts mais recentes</div><div class="posts">{thumbs}</div></div></div>"""
-    link = f"""<div class="mock" style="width:760px"><div style="background:{m['cor_primaria']};color:#fff;padding:44px 30px;text-align:center;font:800 38px Inter">Sua presença oficial<br>no Google</div>
+    link = f"""<div class="mock" style="width:760px"><div style="background:{m['cor_fundo']};color:{m['cor_primaria']};padding:44px 30px;text-align:center;font:800 38px Inter">Sua presença oficial<br>no Google</div>
 <div style="padding:22px 30px;background:#eef3ff"><div style="font:700 24px Inter">Google para Criadores | Perfil na Pesquisa</div>
 <div class="desc" style="font-size:19px;margin-top:6px">Uma nova maneira de criadores se destacarem na Pesquisa.</div>
 <div class="src" style="margin-top:10px;font-size:18px">🔗 creators.google</div></div></div>"""
     return [
-        '<div class="box ouro sm">🚨 ALERTA DE ATUALIZAÇÃO</div><div class="box escuro big">O Google agora tem <span class="hl">perfil de criador</span></div><div class="box azul sm">e quase ninguém ativou ainda 👀</div>',
+        f'<img class="selo canto" src="{m["selo_uri"]}"><div class="box ouro sm">🚨 ALERTA DE ATUALIZAÇÃO</div><div class="box escuro big">O Google agora tem <span class="hl">perfil de criador</span></div><div class="box lima sm">e quase ninguém ativou ainda 👀</div>',
         '<div class="box branco">Quando alguém pesquisa o seu nome no Google, <span class="hla">o que aparece?</span></div><div class="gap"></div><div class="box escuro sm">Link solto e desatualizado = menos autoridade (e menos cliente)</div>',
         f'<div class="box escuro sm">ANTES: era isso que aparecia quando pesquisavam meu nome 👇</div>{antes}',
-        f'<div class="box escuro sm">DEPOIS de criar meu perfil no <span class="hl">Google para Criadores</span> 👇</div><div class="box azul" style="font-size:34px">✅ Muito mais completo, com posts que levam direto pro meu Instagram</div>{depois}',
+        f'<div class="box escuro sm">DEPOIS de criar meu perfil no <span class="hl">Google para Criadores</span> 👇</div><div class="box lima" style="font-size:34px">✅ Muito mais completo, com posts que levam direto pro meu Instagram</div>{depois}',
         f'<div class="box branco sm">E tem mais: clicando em “ver perfil do criador”, a pessoa cai numa página com <span class="hla">todas as minhas redes</span> 🔥</div>{perfil_pg}',
-        f'<div class="box escuro sm">Criar o seu é muito simples:</div><div class="box branco sm">1) Acesse o site:</div><div class="box azul" style="font-size:42px">creators.google/pt-BR/profile</div>{link}',
-        '<div class="box escuro sm">2) Conecte seu Instagram para validar a inscrição</div><div class="box ouro xs">(por enquanto, só para perfis com +10 mil seguidores)</div><div class="gap"></div><div class="box branco sm">3) Conecte suas outras redes sociais</div><div class="gap"></div><div class="box azul sm">4) Conclua o cadastro e acesse seu perfil do Google</div>',
+        f'<div class="box escuro sm">Criar o seu é muito simples:</div><div class="box branco sm">1) Acesse o site:</div><div class="box lima" style="font-size:42px">creators.google/pt-BR/profile</div>{link}',
+        '<div class="box escuro sm">2) Conecte seu Instagram para validar a inscrição</div><div class="box ouro xs">(por enquanto, só para perfis com +10 mil seguidores)</div><div class="gap"></div><div class="box branco sm">3) Conecte suas outras redes sociais</div><div class="gap"></div><div class="box lima sm">4) Conclua o cadastro e acesse seu perfil do Google</div>',
         '<div class="box escuro sm">5) Personalize e deixe todas as suas informações atualizadas</div><div class="gap"></div><div class="box branco sm">Depois de 24h, pesquise seu nome no Google e veja a mudança!</div><div class="gap"></div><div class="box ouro" style="font-size:34px">Tem negócio local? O seu “perfil” é o Google Meu Negócio 📍</div>',
-        f'<div class="box branco">Quer saber das atualizações antes de todo mundo? É só seguir</div><div class="box azul" style="font-size:52px">{perfil}</div>',
+        f'<img class="selo" src="{m["selo_uri"]}"><div class="box branco">Quer saber das atualizações antes de todo mundo? É só seguir</div><div class="box lima" style="font-size:52px">{perfil}</div>',
     ]
 
 
@@ -127,6 +130,8 @@ def main():
     ap.add_argument("--saida", default=str(AQUI / "slides"))
     a = ap.parse_args()
     m = json.loads(Path(a.marca).read_text())
+    for chave in ("logo", "selo"):
+        m[f"{chave}_uri"] = data_uri(AQUI / m[chave])
     foto = data_uri(a.foto) if a.foto and Path(a.foto).exists() else None
     saida = Path(a.saida)
     saida.mkdir(parents=True, exist_ok=True)
