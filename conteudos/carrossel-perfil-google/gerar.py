@@ -111,15 +111,15 @@ def slides(m):
 <div class="desc" style="font-size:19px;margin-top:6px">Uma nova maneira de criadores se destacarem na Pesquisa.</div>
 <div class="src" style="margin-top:10px;font-size:18px">🔗 creators.google</div></div></div>"""
     return [
-        f'<img class="selo canto" src="{m["sz_uri"]}"><div class="box ouro sm">🚨 ALERTA DE ATUALIZAÇÃO</div><div class="box escuro big">O Google agora tem <span class="hl">perfil de criador</span></div><div class="box lima sm">e quase ninguém ativou ainda 👀</div>',
-        '<div class="box branco">Quando alguém pesquisa o seu nome no Google, <span class="hla">o que aparece?</span></div><div class="gap"></div><div class="box escuro sm">Link solto e desatualizado = menos autoridade (e menos cliente)</div>',
-        f'<div class="box escuro sm">ANTES: era isso que aparecia quando pesquisavam meu nome 👇</div>{antes}',
-        f'<div class="box escuro sm">DEPOIS de criar meu perfil no <span class="hl">Google para Criadores</span> 👇</div><div class="box lima" style="font-size:34px">✅ Muito mais completo, com posts que levam direto pro meu Instagram</div>{depois}',
-        f'<div class="box branco sm">E tem mais: clicando em “ver perfil do criador”, a pessoa cai numa página com <span class="hla">todas as minhas redes</span> 🔥</div>{perfil_pg}',
-        f'<div class="box escuro sm">Criar o seu é muito simples:</div><div class="box branco sm">1) Acesse o site:</div><div class="box lima" style="font-size:42px">creators.google/pt-BR/profile</div>{link}',
-        '<div class="box escuro sm">2) Conecte seu Instagram para validar a inscrição</div><div class="box ouro xs">(por enquanto, só para perfis com +10 mil seguidores)</div><div class="gap"></div><div class="box branco sm">3) Conecte suas outras redes sociais</div><div class="gap"></div><div class="box lima sm">4) Conclua o cadastro e acesse seu perfil do Google</div>',
-        '<div class="box escuro sm">5) Personalize e deixe todas as suas informações atualizadas</div><div class="gap"></div><div class="box branco sm">Depois de 24h, pesquise seu nome no Google e veja a mudança!</div><div class="gap"></div><div class="box ouro" style="font-size:34px">Tem negócio local? O seu “perfil” é o Google Meu Negócio 📍</div>',
-        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer saber das atualizações antes de todo mundo? É só seguir</div><div class="box lima" style="font-size:52px">{perfil}</div>',
+        f'<img class="selo canto" src="{m["sz_uri"]}"><div class="box ouro sm">🚨 Alerta de ATUALIZAÇÃO</div><div class="box escuro big">que vai fazer você <span class="hl">aparecer muito mais</span> no Google!</div>',
+        '<div class="box branco">Agora você pode criar o seu <span class="hla">perfil de creator</span> no Google!</div><div class="gap"></div><div class="box escuro sm">E ele muda totalmente o que aparece quando alguém pesquisa o seu nome 👀</div>',
+        f'<div class="box escuro sm">Esse era o resultado que aparecia ANTES quando pesquisavam o meu nome 👇</div>{antes}',
+        f'<div class="box escuro sm">E agora esse é o resultado que aparece DEPOIS que eu criei o meu perfil no <span class="hl">Google creator!</span> 👇</div><div class="box lima" style="font-size:34px">✅ Muito mais completo, e com links que levam direto para os meus conteúdos aqui do Instagram!</div>{depois}',
+        f'<div class="box branco sm">E tem mais, se a pessoa clicar em “ver perfil do creator” ela é <span class="hla">direcionada</span> para uma página que tem <span class="hla">todos os links das redes sociais</span> que eu cadastrei 👌🔥</div>{perfil_pg}',
+        f'<div class="box escuro sm">E para criar o seu perfil é muito simples.</div><div class="box branco sm">1) Basta você acessar o site:</div><div class="box lima" style="font-size:40px">https://creators.google/pt-BR/profile</div>{link}',
+        '<div class="box escuro sm">2) Conecte o seu perfil do Instagram para validar a sua inscrição</div><div class="box ouro xs">(Válido apenas para quem tem mais de 10k de seguidores)</div><div class="gap"></div><div class="box branco sm">3) Conecte as duas outras redes sociais</div><div class="gap"></div><div class="box lima sm">4) Conclua o seu cadastro e acesse o seu perfil do Google</div>',
+        '<div class="box escuro sm">5) Agora é só personalizar para deixar todas as suas informações atualizadas</div><div class="gap"></div><div class="box branco sm">E depois de 24 horas você pesquisa o seu nome no Google para ver ele atualizado!</div>',
+        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">E se quiser receber mais conteúdos como esse é só seguir</div><div class="box lima" style="font-size:52px">{perfil}</div>',
     ]
 
 
