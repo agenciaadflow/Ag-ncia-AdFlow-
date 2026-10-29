@@ -102,38 +102,17 @@ def google(nome, corpo, largura=900):
 
 
 # Exemplos fictícios: uma criadora de moda (Perfil na Pesquisa) e uma loja (Perfil da Empresa)
-CRIADORA = {"nome": "Bia Estilo", "perfil": "@biaestilo"}
-LOJA = "Aurora Moda"
+# Exemplo fictício: loja de roupas com +10 mil seguidores no Instagram
+LOJA = {"nome": "Aurora Moda", "perfil": "@auroramoda.loja"}
 PECAS = [("#F6D6D0", "👗", "Coleção nova ▶"), ("#D9E4F2", "👖", "Look do dia"), ("#F3E7C9", "👚", "Promo da semana")]
-NOTA = '<div class="nota">*Exemplo fictício, ilustrativo</div>'
+NOTA = '<div class="nota">*Loja fictícia, exemplo ilustrativo</div>'
 
 
-def miniaturas(legendas=True):
+def miniaturas():
     return "".join(
-        f'<div class="thumb" style="background:{cor}"><span class="peca">{emoji}</span>{f"<i>{t}</i>" if legendas else ""}</div>'
+        f'<div class="thumb" style="background:{cor}"><span class="peca">{emoji}</span><i>{t}</i></div>'
         for cor, emoji, t in PECAS
     )
-
-
-def painel_loja(m, forte):
-    """Mockup do Perfil da Empresa (Google Meu Negócio) da loja, fraco ou caprichado."""
-    if forte:
-        nota, aval, info = "4,9", "(238 avaliações)", "Aberto · Fecha às 19:00"
-        botoes = ["Rotas", "Ligar", "WhatsApp", "Site", "Salvar"]
-        fotos = f'<div class="posts">{miniaturas(False)}</div>'
-        extra = '<div class="src" style="margin-top:14px;font-weight:700">Novidades da loja</div><div class="desc">👗 Coleção de verão chegou! Peças a partir de R$ 59…</div>'
-        estrelas = "★★★★★"
-    else:
-        nota, aval, info = "3,8", "(6 avaliações)", "Horário não informado"
-        botoes = ["Rotas", "Salvar"]
-        fotos = '<div class="thumb" style="background:#e9e9e9;width:470px;height:120px"><span class="peca" style="top:22px;font-size:52px">🏬</span></div>'
-        extra = '<div class="desc" style="margin-top:12px;color:#b3261e;font-size:18px">Sem WhatsApp · Sem horário · Sem fotos</div>'
-        estrelas = "★★★★☆"
-    chips = "".join(f'<span class="chip">{b}</span>' for b in botoes)
-    corpo = f"""<div class="res"><div style="font:800 30px Inter;color:#202124">{LOJA}</div>
-<div class="desc" style="font-size:18px"><b style="color:#202124">{nota}</b> <span style="color:#fbbc04">{estrelas}</span> {aval} · Loja de roupas femininas</div>
-<div class="desc" style="font-size:17px;margin:4px 0 12px">{info}</div>{chips}<div style="margin-top:14px">{fotos}</div>{extra}</div>"""
-    return google(LOJA, corpo, 820)
 
 
 def logo_google(classe="glogo gbig"):
@@ -144,35 +123,34 @@ def busca(texto):
     return f'<div class="gcard">{logo_google()}<div class="gsearch">🔍&nbsp; {texto}<b>|</b></div></div>'
 
 
-def mapa():
-    """Mapa ilustrado com o pin vermelho do Google Maps em cima da loja."""
-    ruas = "".join(f'<line x1="{x}" y1="0" x2="{x + 60}" y2="300" stroke="#fff" stroke-width="16"/>' for x in (90, 300, 520, 720))
-    ruas += "".join(f'<line x1="0" y1="{y}" x2="840" y2="{y - 30}" stroke="#fff" stroke-width="16"/>' for y in (80, 190, 280))
-    return f"""<div class="mapa"><svg width="840" height="300" viewBox="0 0 840 300" xmlns="http://www.w3.org/2000/svg">
-<rect width="840" height="300" fill="#e8eef2"/><rect x="560" y="200" width="160" height="90" rx="10" fill="#cfe8c6"/>
-<path d="M0 240 C200 210 260 300 420 270" stroke="#aecbfa" stroke-width="26" fill="none"/>{ruas}
-<g transform="translate(420 120)"><ellipse cx="0" cy="62" rx="22" ry="7" fill="rgba(0,0,0,.25)"/>
-<path d="M0 60 C-10 30 -46 10 -46 -20 A46 46 0 1 1 46 -20 C46 10 10 30 0 60Z" fill="#EA4335"/><circle cx="0" cy="-20" r="17" fill="#A50E0E"/></g>
-<g transform="translate(476 70)"><rect width="340" height="74" rx="14" fill="#fff" stroke="#dadce0"/>
-<text x="20" y="32" font-family="Inter" font-weight="800" font-size="24" fill="#202124">Aurora Moda</text>
-<text x="20" y="60" font-family="Inter" font-size="19" fill="#5f6368">4,9 <tspan fill="#fbbc04">★★★★★</tspan> · Loja de roupas</text></g></svg></div>"""
-
-
 def slides(m):
-    nome, perfil = CRIADORA["nome"], CRIADORA["perfil"]
+    nome, perfil = LOJA["nome"], LOJA["perfil"]
+    usuario = perfil.lstrip("@")
+    antes = google(nome, f"""
+<div class="res"><div class="src">instagram.com › {usuario}</div><div class="tit">{nome} (@{usuario}) • Fotos e vídeos do Instagram</div>
+<div class="desc">Veja as fotos e vídeos do Instagram de {nome}…</div></div>
+<div class="res"><div class="src">facebook.com › {usuario}</div><div class="tit">{nome} | Facebook</div><div class="desc">Moda feminina…</div></div>""")
+    depois = google(nome, f"""
+<div class="res"><div class="src">Instagram · {perfil}</div><div class="tit">{nome} | Moda feminina</div>
+<div class="desc">Peças novas toda semana, looks e promoções…</div>
+<div class="src" style="margin-top:14px;font-weight:700">Posts mais recentes</div>
+<div class="posts circ">{miniaturas()}</div></div>""")
     perfil_pg = f"""<div class="mock" style="width:760px">
-<div style="background:{m['cor_fundo']};color:#fff;padding:28px 30px"><div style="font:800 40px Inter">{nome}</div><div style="font-size:18px;opacity:.8">{perfil} · Página no Google</div></div>
-<div style="padding:20px 30px"><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">YouTube</span>
+<div style="background:{m['cor_fundo']};color:#fff;padding:28px 30px"><div style="font:800 40px Inter">{nome}</div><div style="font-size:18px;opacity:.8">{perfil} · Perfil no Google</div></div>
+<div style="padding:20px 30px"><span class="chip">+ Seguir no Google</span><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">YouTube</span>
 <div class="src" style="margin:18px 0 6px;font-weight:700">Posts mais recentes</div><div class="posts">{miniaturas()}</div></div></div>"""
+    passos = [("📸", "Entre com o Instagram da loja"), ("🔗", "Conecte as outras redes (se quiser)"), ("✅", "Conclua o cadastro"), ("✏️", "Personalize as informações")]
+    grade = "".join(f'<div class="tile"><span>{e}</span>{i + 2}) {t}</div>' for i, (e, t) in enumerate(passos))
     return [
-        f'{busca("perfil do Instagram no Google")}<div class="box ouro sm">🚨 Novidade no Google!</div><div class="box escuro">Se o perfil do seu Instagram tem <span class="hl">mais de 10 mil seguidores</span>, ele agora pode aparecer no Google!</div>',
-        f'{busca("loja de roupas perto de mim")}<div class="box branco big" style="font-size:62px">Mas e quem tem <span class="hla">LOJA?</span>&nbsp;🤔</div><div class="box lima sm">Curte ❤️ e me segue<br>antes que eu te explique 👇</div>',
-        f'<div class="box escuro sm">Olha como o perfil do Instagram aparece no Google 👇</div>{perfil_pg}{NOTA}',
-        f'{mapa()}<div class="box ouro sm">E a sua loja? 🛍️</div><div class="box escuro">Ela aparece pelo <span class="hl">Google Meu Negócio</span> 📍</div><div class="gap"></div><div class="box branco sm">É aquela ficha com fotos, endereço, horário e avaliações</div>',
-        f'<div class="box escuro sm">Ficha abandonada 😬<br><span class="hl">a cliente desiste e vai na concorrente</span></div>{painel_loja(m, False)}{NOTA}',
-        f'<div class="box escuro sm">Ficha caprichada 🤩<br><span class="hl">a cliente confia e já chama no WhatsApp</span></div>{painel_loja(m, True)}{NOTA}',
-        '<div class="box escuro sm">Como deixar a sua assim:</div><div class="grade"><div class="tile"><span>📸</span>Fotos bonitas das roupas</div><div class="tile"><span>🕒</span>Horário e WhatsApp certos</div><div class="tile"><span>⭐</span>Pedir avaliação pras clientes</div><div class="tile"><span>📢</span>Postar novidades toda semana</div></div>',
-        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer aprender a deixar a ficha da sua loja assim?</div><div class="box escuro sm">Me segue que eu te ensino<br>o passo a passo 👣</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
+        f'{busca(nome)}<div class="box ouro sm">🚨 Novidade no Google!</div><div class="box escuro">Se o Instagram da sua loja tem <span class="hl">mais de 10 mil seguidores</span>, ele agora pode aparecer no Google!</div>',
+        f'<div class="gcard" style="width:auto">{logo_google()}</div><div class="box branco big" style="font-size:62px">E o que muda na prática? 🤔</div><div class="box lima sm">Curte ❤️ e me segue<br>antes que eu te explique 👇</div>',
+        f'<div class="box escuro sm">ANTES: quando a cliente pesquisava a loja, aparecia só isso 👇</div>{antes}{NOTA}',
+        f'<div class="box escuro sm">DEPOIS: com o perfil no Google, aparecem os <span class="hl">posts do Instagram da loja</span> 👇</div><div class="box lima" style="font-size:34px">✅ Muito mais completo, com links direto pro Instagram!</div>{depois}{NOTA}',
+        f'<div class="box branco sm">E clicando em “ver perfil”, a cliente vê <span class="hla">todas as redes da loja</span> num lugar só 🔥</div>{perfil_pg}{NOTA}',
+        f'{busca("creators.google/pt-BR/profile")}<div class="box escuro sm">Pra criar é simples:</div><div class="box branco sm">1) Acesse o site do Google para Criadores</div><div class="box ouro xs">Precisa ter mais de 10 mil seguidores e 18 anos ou mais</div>',
+        f'<div class="box escuro sm">Depois é só seguir os passos:</div><div class="grade">{grade}</div>',
+        f'{busca(nome)}<div class="box lima big">Pronto! 🎉</div><div class="box escuro sm">Agora é só pesquisar o nome da sua loja no Google e ver como ficou</div>',
+        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer mais dicas como essa pra sua loja?</div><div class="box escuro sm">Me segue que eu te ensino<br>o passo a passo 👣</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
     ]
 
 
