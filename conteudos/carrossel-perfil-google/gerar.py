@@ -34,8 +34,8 @@ body{{width:1080px;height:1350px;overflow:hidden;font-family:Inter,sans-serif}}
 .topo{{position:absolute;top:0;left:0;right:0;height:70px;background:{preto};color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 44px;font:800 21px Inter;letter-spacing:1.5px;z-index:2}}
 .topo b{{color:{lima}}}
 .topo img{{height:40px;margin-right:22px;vertical-align:middle}}
-.selo{{width:230px;height:230px;margin-bottom:26px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}}
-.selo.canto{{position:absolute;bottom:100%;right:0;margin-bottom:24px;width:200px;height:200px;z-index:2}}
+.selo{{width:220px;margin-bottom:28px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.55))}}
+.selo.canto{{position:absolute;bottom:100%;right:0;margin-bottom:28px;width:170px;z-index:2;filter:drop-shadow(0 6px 18px rgba(0,0,0,.55))}}
 .rodape{{position:absolute;bottom:0;left:0;right:0;height:62px;background:{preto};color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 44px;font:600 20px Inter;z-index:2}}
 .rodape b{{color:{lima};font-weight:800}}
 .ph{{position:absolute;top:320px;left:0;right:0;text-align:center;font:800 34px Inter;color:#fff;letter-spacing:4px;opacity:.85}}
@@ -73,7 +73,7 @@ body{{width:1080px;height:1350px;overflow:hidden;font-family:Inter,sans-serif}}
 
 def pagina(m, n, conteudo, sem_foto):
     ph = '<div class="ph">SUA FOTO AQUI</div>' if sem_foto else ""
-    topo = f'<img src="{m["logo_uri"]}"><b>{m["assinatura"]}</b>'
+    topo = f'<img src="{m["sz_uri"]}"><b>{m["assinatura"]}</b>'
     return (
         f'<div class="slide">{ph}<div class="topo"><span>{topo}</span><span>{n}/9</span></div>'
         f'<div class="stack">{conteudo}</div>'
@@ -111,7 +111,7 @@ def slides(m):
 <div class="desc" style="font-size:19px;margin-top:6px">Uma nova maneira de criadores se destacarem na Pesquisa.</div>
 <div class="src" style="margin-top:10px;font-size:18px">🔗 creators.google</div></div></div>"""
     return [
-        f'<img class="selo canto" src="{m["selo_uri"]}"><div class="box ouro sm">🚨 ALERTA DE ATUALIZAÇÃO</div><div class="box escuro big">O Google agora tem <span class="hl">perfil de criador</span></div><div class="box lima sm">e quase ninguém ativou ainda 👀</div>',
+        f'<img class="selo canto" src="{m["sz_uri"]}"><div class="box ouro sm">🚨 ALERTA DE ATUALIZAÇÃO</div><div class="box escuro big">O Google agora tem <span class="hl">perfil de criador</span></div><div class="box lima sm">e quase ninguém ativou ainda 👀</div>',
         '<div class="box branco">Quando alguém pesquisa o seu nome no Google, <span class="hla">o que aparece?</span></div><div class="gap"></div><div class="box escuro sm">Link solto e desatualizado = menos autoridade (e menos cliente)</div>',
         f'<div class="box escuro sm">ANTES: era isso que aparecia quando pesquisavam meu nome 👇</div>{antes}',
         f'<div class="box escuro sm">DEPOIS de criar meu perfil no <span class="hl">Google para Criadores</span> 👇</div><div class="box lima" style="font-size:34px">✅ Muito mais completo, com posts que levam direto pro meu Instagram</div>{depois}',
@@ -119,7 +119,7 @@ def slides(m):
         f'<div class="box escuro sm">Criar o seu é muito simples:</div><div class="box branco sm">1) Acesse o site:</div><div class="box lima" style="font-size:42px">creators.google/pt-BR/profile</div>{link}',
         '<div class="box escuro sm">2) Conecte seu Instagram para validar a inscrição</div><div class="box ouro xs">(por enquanto, só para perfis com +10 mil seguidores)</div><div class="gap"></div><div class="box branco sm">3) Conecte suas outras redes sociais</div><div class="gap"></div><div class="box lima sm">4) Conclua o cadastro e acesse seu perfil do Google</div>',
         '<div class="box escuro sm">5) Personalize e deixe todas as suas informações atualizadas</div><div class="gap"></div><div class="box branco sm">Depois de 24h, pesquise seu nome no Google e veja a mudança!</div><div class="gap"></div><div class="box ouro" style="font-size:34px">Tem negócio local? O seu “perfil” é o Google Meu Negócio 📍</div>',
-        f'<img class="selo" src="{m["selo_uri"]}"><div class="box branco">Quer saber das atualizações antes de todo mundo? É só seguir</div><div class="box lima" style="font-size:52px">{perfil}</div>',
+        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer saber das atualizações antes de todo mundo? É só seguir</div><div class="box lima" style="font-size:52px">{perfil}</div>',
     ]
 
 
@@ -130,7 +130,7 @@ def main():
     ap.add_argument("--saida", default=str(AQUI / "slides"))
     a = ap.parse_args()
     m = json.loads(Path(a.marca).read_text())
-    for chave in ("logo", "selo"):
+    for chave in ("sz",):
         m[f"{chave}_uri"] = data_uri(AQUI / m[chave])
     foto = data_uri(a.foto) if a.foto and Path(a.foto).exists() else None
     saida = Path(a.saida)
