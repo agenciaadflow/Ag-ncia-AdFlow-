@@ -1,4 +1,4 @@
-/* AdFlow · WhatsApp, rastreamento e formulário do diagnóstico */
+/* Szadura · WhatsApp, rastreamento e formulário do diagnóstico */
 var WHATS_NUMERO = "5545999407123";
 
 /* Rastreamento: quando os IDs forem instalados no <head> (fbq e gtag), os eventos passam a ser enviados. */
