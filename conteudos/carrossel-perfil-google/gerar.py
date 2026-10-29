@@ -166,14 +166,13 @@ def slides(m):
 <div class="src" style="margin:18px 0 6px;font-weight:700">Posts mais recentes</div><div class="posts">{miniaturas()}</div></div></div>"""
     return [
         f'{busca("perfil do Instagram no Google")}<div class="box ouro sm">🚨 Novidade no Google!</div><div class="box escuro">Se o perfil do seu Instagram tem <span class="hl">mais de 10 mil seguidores</span>, ele agora pode aparecer no Google!</div>',
-        f'{busca("loja de roupas perto de mim")}<div class="box branco big">Mas e quem tem <span class="hla">LOJA?</span> 🤔</div><div class="box escuro sm">Vou te mostrar de um jeito simples 👇</div>',
+        f'{busca("loja de roupas perto de mim")}<div class="box branco big" style="font-size:62px">Mas e quem tem <span class="hla">LOJA?</span>&nbsp;🤔</div><div class="box lima sm">Curte ❤️ e me segue<br>antes que eu te explique 👇</div>',
         f'<div class="box escuro sm">Olha como o perfil do Instagram aparece no Google 👇</div>{perfil_pg}{NOTA}',
         f'{mapa()}<div class="box ouro sm">E a sua loja? 🛍️</div><div class="box escuro">Ela aparece pelo <span class="hl">Google Meu Negócio</span> 📍</div><div class="gap"></div><div class="box branco sm">É aquela ficha com fotos, endereço, horário e avaliações</div>',
         f'<div class="box escuro sm">Ficha abandonada 😬<br><span class="hl">a cliente desiste e vai na concorrente</span></div>{painel_loja(m, False)}{NOTA}',
         f'<div class="box escuro sm">Ficha caprichada 🤩<br><span class="hl">a cliente confia e já chama no WhatsApp</span></div>{painel_loja(m, True)}{NOTA}',
         '<div class="box escuro sm">Como deixar a sua assim:</div><div class="grade"><div class="tile"><span>📸</span>Fotos bonitas das roupas</div><div class="tile"><span>🕒</span>Horário e WhatsApp certos</div><div class="tile"><span>⭐</span>Pedir avaliação pras clientes</div><div class="tile"><span>📢</span>Postar novidades toda semana</div></div>',
-        '<div class="acoes"><span class="cur">❤️</span><span>💬</span><span>📲</span><span>🔖</span></div><div class="box branco big">Gostou do conteúdo?</div><div class="box lima big">Já curte esse post ❤️</div><div class="gap"></div><div class="box escuro sm">e manda pra uma amiga que tem loja 📲</div>',
-        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer ajuda pra deixar a ficha da sua loja assim? Comenta <span class="hla">GOOGLE</span> 💬</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
+        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer aprender a deixar a ficha da sua loja assim?</div><div class="box escuro sm">Me segue que eu te ensino<br>o passo a passo 👣</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
     ]
 
 
