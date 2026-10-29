@@ -91,46 +91,61 @@ def google(nome, corpo, largura=900):
 {corpo}</div>"""
 
 
-# Exemplo fictício: a dona do perfil ainda não tem os 10 mil seguidores exigidos
-LOJA = {"nome": "Aurora Moda", "perfil": "@auroramoda.loja"}
+# Exemplos fictícios: uma criadora de moda (Perfil na Pesquisa) e uma loja (Perfil da Empresa)
+CRIADORA = {"nome": "Bia Estilo", "perfil": "@biaestilo"}
+LOJA = "Aurora Moda"
 PECAS = [("#F6D6D0", "👗", "Coleção nova ▶"), ("#D9E4F2", "👖", "Look do dia"), ("#F3E7C9", "👚", "Promo da semana")]
-NOTA = '<div class="nota">*Loja fictícia, exemplo ilustrativo</div>'
+NOTA = '<div class="nota">*Exemplo fictício, ilustrativo</div>'
+
+
+def miniaturas(legendas=True):
+    return "".join(
+        f'<div class="thumb" style="background:{cor}"><span class="peca">{emoji}</span>{f"<i>{t}</i>" if legendas else ""}</div>'
+        for cor, emoji, t in PECAS
+    )
+
+
+def painel_loja(m, forte):
+    """Mockup do Perfil da Empresa (Google Meu Negócio) da loja, fraco ou caprichado."""
+    if forte:
+        nota, aval, info = "4,9", "(238 avaliações)", "Aberto · Fecha às 19:00"
+        botoes = ["Rotas", "Ligar", "WhatsApp", "Site", "Salvar"]
+        fotos = f'<div class="posts">{miniaturas(False)}</div>'
+        extra = '<div class="src" style="margin-top:14px;font-weight:700">Novidades da loja</div><div class="desc">👗 Coleção de verão chegou! Peças a partir de R$ 59…</div>'
+        estrelas = "★★★★★"
+    else:
+        nota, aval, info = "3,8", "(6 avaliações)", "Horário não informado"
+        botoes = ["Rotas", "Salvar"]
+        fotos = '<div class="thumb" style="background:#e9e9e9;width:470px;height:120px"><span class="peca" style="top:22px;font-size:52px">🏬</span></div>'
+        extra = '<div class="desc" style="margin-top:12px;color:#b3261e">Sem site · Sem telefone · Sem fotos recentes</div>'
+        estrelas = "★★★★☆"
+    chips = "".join(f'<span class="chip">{b}</span>' for b in botoes)
+    corpo = f"""<div class="res"><div style="font:800 30px Inter;color:#202124">{LOJA}</div>
+<div class="desc" style="font-size:18px"><b style="color:#202124">{nota}</b> <span style="color:#fbbc04">{estrelas}</span> {aval} · Loja de roupas femininas</div>
+<div class="desc" style="font-size:17px;margin:4px 0 12px">{info}</div>{chips}<div style="margin-top:14px">{fotos}</div>{extra}</div>"""
+    return google(LOJA, corpo, 820)
 
 
 def slides(m):
-    nome, perfil = LOJA["nome"], LOJA["perfil"]
-    usuario = perfil.lstrip("@")
-    antes = google(nome, f"""
-<div class="res"><div class="src">instagram.com › {usuario}</div><div class="tit">{nome} (@{usuario}) • Fotos e vídeos do Instagram</div>
-<div class="desc">Veja as fotos e vídeos do Instagram de {nome}…</div></div>
-<div class="res"><div class="src">facebook.com › {usuario}</div><div class="tit">{nome} | Facebook</div><div class="desc">Moda feminina, peças novas toda semana…</div></div>""")
-    thumbs = "".join(
-        f'<div class="thumb" style="background:{cor}"><span class="peca">{emoji}</span><i>{t}</i></div>'
-        for cor, emoji, t in PECAS
-    )
-    depois = google(nome, f"""
-<div class="res"><div class="src">Instagram · {perfil}</div><div class="tit">{nome} | Moda feminina</div>
-<div class="desc">Peças novas toda semana, looks e promoções…</div>
-<div class="src" style="margin-top:14px;font-weight:700">Posts mais recentes</div>
-<div class="posts circ">{thumbs}</div></div>""")
+    nome, perfil = CRIADORA["nome"], CRIADORA["perfil"]
     perfil_pg = f"""<div class="mock" style="width:760px">
-<div style="background:{m['cor_fundo']};color:#fff;padding:28px 30px"><div style="font:800 40px Inter">{nome}</div><div style="font-size:18px;opacity:.8">{perfil} · Perfil de criador</div></div>
+<div style="background:{m['cor_fundo']};color:#fff;padding:28px 30px"><div style="font:800 40px Inter">{nome}</div><div style="font-size:18px;opacity:.8">{perfil} · Perfil na Pesquisa</div></div>
 <div style="padding:20px 30px"><span class="chip">+ Seguir no Google</span><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">YouTube</span>
-<div class="src" style="margin:18px 0 6px;font-weight:700">Posts mais recentes</div><div class="posts">{thumbs}</div></div></div>"""
-    link = f"""<div class="mock" style="width:760px"><div style="background:{m['cor_fundo']};color:{m['cor_primaria']};padding:44px 30px;text-align:center;font:800 38px Inter">Sua presença oficial<br>no Google</div>
-<div style="padding:22px 30px;background:#eef3ff"><div style="font:700 24px Inter">Google para Criadores | Perfil na Pesquisa</div>
-<div class="desc" style="font-size:19px;margin-top:6px">Uma nova maneira de criadores, marcas e publishers se destacarem na Pesquisa.</div>
-<div class="src" style="margin-top:10px;font-size:18px">🔗 creators.google</div></div></div>"""
+<div class="src" style="margin:18px 0 6px;font-weight:700">Posts mais recentes</div><div class="posts">{miniaturas()}</div></div></div>"""
+    link = f"""<div class="mock" style="width:760px"><div style="background:{m['cor_fundo']};color:{m['cor_primaria']};padding:40px 30px;text-align:center;font:800 36px Inter">Perfil na Pesquisa<br>Google para Criadores</div>
+<div style="padding:22px 30px;background:#eef3ff"><div style="font:700 22px Inter">Requisitos oficiais</div>
+<div class="desc" style="font-size:19px;margin-top:6px">✔ 10 mil seguidores em UMA rede: Instagram, TikTok, YouTube ou X<br>✔ Ter 18 anos ou mais<br>✔ Seguir as políticas de conteúdo do Google</div>
+<div class="src" style="margin-top:10px;font-size:18px">🔗 profile.google.com/claim</div></div></div>"""
     return [
-        f'<img class="selo canto" src="{m["sz_uri"]}"><div class="box ouro sm">🚨 Alerta de ATUALIZAÇÃO</div><div class="box escuro big">que vai fazer a sua loja <span class="hl">aparecer muito mais</span> no Google!</div>',
-        '<div class="box branco">Agora marcas e lojas podem criar um <span class="hla">perfil de creator</span> no Google!</div><div class="gap"></div><div class="box escuro sm">E ele muda totalmente o que aparece quando alguém pesquisa o nome da sua loja 👀</div>',
-        f'<div class="box escuro sm">Olha o exemplo de uma loja de roupas: esse é o resultado que aparece ANTES 👇</div>{antes}{NOTA}',
-        f'<div class="box escuro sm">E esse é o resultado que aparece DEPOIS que a loja cria o perfil no <span class="hl">Google creator!</span> 👇</div><div class="box lima" style="font-size:34px">✅ Muito mais completo, e com links que levam direto para os conteúdos do Instagram da loja!</div>{depois}{NOTA}',
-        f'<div class="box branco sm">E tem mais, se a cliente clicar em “ver perfil do creator” ela é <span class="hla">direcionada</span> para uma página com <span class="hla">todos os links das redes sociais</span> da loja 👌🔥</div>{perfil_pg}{NOTA}',
-        f'<div class="box escuro sm">E para criar o perfil da sua loja é muito simples.</div><div class="box branco sm">1) Basta você acessar o site:</div><div class="box lima" style="font-size:40px">https://creators.google/pt-BR/profile</div>{link}',
-        '<div class="box escuro sm">2) Conecte o perfil do Instagram da loja para validar a inscrição</div><div class="box ouro xs">(Válido apenas para quem tem mais de 10k de seguidores)</div><div class="gap"></div><div class="box branco sm">3) Conecte as duas outras redes sociais</div><div class="gap"></div><div class="box lima sm">4) Conclua o cadastro e acesse o perfil da loja no Google</div>',
-        '<div class="box escuro sm">5) Agora é só personalizar para deixar todas as informações da loja atualizadas</div><div class="gap"></div><div class="box branco sm">E depois de 24 horas você pesquisa o nome da sua loja no Google para ver ele atualizado!</div>',
-        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">E se quiser receber mais conteúdos como esse é só seguir</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
+        f'<img class="selo canto" src="{m["sz_uri"]}"><div class="box ouro sm">🚨 Alerta de ATUALIZAÇÃO</div><div class="box escuro big">O Google lançou o <span class="hl">Perfil na Pesquisa</span> no Brasil!</div>',
+        '<div class="box branco">Criadores com <span class="hla">+10 mil seguidores</span> agora podem ter um perfil oficial no Google</div><div class="gap"></div><div class="box escuro sm">Mas e se você tem uma LOJA? Calma que eu te explico 👀</div>',
+        f'<div class="box escuro sm">Para criadores, aparece um painel com <span class="hl">todas as redes e os posts recentes</span> 👇</div>{perfil_pg}{NOTA}',
+        f'<div class="box escuro sm">Para criar, acesse o site e faça login com a rede que tem os 10 mil seguidores:</div><div class="box lima" style="font-size:40px">profile.google.com/claim</div>{link}',
+        '<div class="box ouro sm">⚠️ Atenção, lojista!</div><div class="box escuro">Para empresas, o Google continua mostrando o <span class="hl">Perfil da Empresa</span></div><div class="gap"></div><div class="box branco sm">Ou seja: quem aparece pela sua loja é o <span class="hla">Google Meu Negócio</span> 📍</div>',
+        f'<div class="box escuro sm">E é assim que muita loja aparece quando a cliente pesquisa o nome 👇</div>{painel_loja(m, False)}{NOTA}',
+        f'<div class="box escuro sm">E assim aparece uma loja com o <span class="hl">Google Meu Negócio caprichado</span> 👇</div>{painel_loja(m, True)}{NOTA}',
+        '<div class="box escuro sm">O que deixa o perfil da sua loja forte no Google:</div><div class="box branco sm" style="text-align:left;font-size:38px;line-height:1.45">✅ Fotos reais das peças e da loja<br>✅ Horário, WhatsApp e site certinhos<br>✅ Responder todas as avaliações<br>✅ Postar as novidades toda semana</div>',
+        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer o Google Meu Negócio da sua loja assim? Comenta <span class="hla">GOOGLE</span> ou chama no direct</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
     ]
 
 
