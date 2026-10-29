@@ -136,21 +136,23 @@ def slides(m):
 <div class="src" style="margin-top:14px;font-weight:700">Posts mais recentes</div>
 <div class="posts circ">{miniaturas()}</div></div>""")
     perfil_pg = f"""<div class="mock" style="width:760px">
-<div style="background:{m['cor_fundo']};color:#fff;padding:28px 30px"><div style="font:800 40px Inter">{nome}</div><div style="font-size:18px;opacity:.8">{perfil} · Perfil no Google</div></div>
+<div style="background:{m['cor_fundo']};color:#fff;padding:28px 30px"><div style="font:800 40px Inter">{nome}</div><div style="font-size:18px;opacity:.8">{perfil} · Perfil de criador</div></div>
 <div style="padding:20px 30px"><span class="chip">+ Seguir no Google</span><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">YouTube</span>
 <div class="src" style="margin:18px 0 6px;font-weight:700">Posts mais recentes</div><div class="posts">{miniaturas()}</div></div></div>"""
-    passos = [("📸", "Entre com o Instagram da loja"), ("🔗", "Conecte as outras redes (se quiser)"), ("✅", "Conclua o cadastro"), ("✏️", "Personalize as informações")]
-    grade = "".join(f'<div class="tile"><span>{e}</span>{i + 2}) {t}</div>' for i, (e, t) in enumerate(passos))
+    link = f"""<div class="mock" style="width:760px"><div style="background:{m['cor_fundo']};color:{m['cor_primaria']};padding:40px 30px;text-align:center;font:800 38px Inter">Sua presença oficial<br>no Google</div>
+<div style="padding:22px 30px;background:#eef3ff"><div style="font:700 24px Inter">Google para Criadores | Perfil na Pesquisa</div>
+<div class="desc" style="font-size:19px;margin-top:6px">Uma nova maneira de criadores, marcas e publishers se destacarem na Pesquisa.</div>
+<div class="src" style="margin-top:10px;font-size:18px">🔗 creators.google</div></div></div>"""
     return [
-        f'{busca(nome)}<div class="box ouro sm">🚨 Novidade no Google!</div><div class="box escuro">Se o Instagram da sua loja tem <span class="hl">mais de 10 mil seguidores</span>, ele agora pode aparecer no Google!</div>',
-        f'<div class="gcard" style="width:auto">{logo_google()}</div><div class="box branco big" style="font-size:62px">E o que muda na prática? 🤔</div><div class="box lima sm">Curte ❤️ e me segue<br>antes que eu te explique 👇</div>',
-        f'<div class="box escuro sm">ANTES: quando a cliente pesquisava a loja, aparecia só isso 👇</div>{antes}{NOTA}',
-        f'<div class="box escuro sm">DEPOIS: com o perfil no Google, aparecem os <span class="hl">posts do Instagram da loja</span> 👇</div><div class="box lima" style="font-size:34px">✅ Muito mais completo, com links direto pro Instagram!</div>{depois}{NOTA}',
-        f'<div class="box branco sm">E clicando em “ver perfil”, a cliente vê <span class="hla">todas as redes da loja</span> num lugar só 🔥</div>{perfil_pg}{NOTA}',
-        f'{busca("creators.google/pt-BR/profile")}<div class="box escuro sm">Pra criar é simples:</div><div class="box branco sm">1) Acesse o site do Google para Criadores</div><div class="box ouro xs">Precisa ter mais de 10 mil seguidores e 18 anos ou mais</div>',
-        f'<div class="box escuro sm">Depois é só seguir os passos:</div><div class="grade">{grade}</div>',
-        f'{busca(nome)}<div class="box lima big">Pronto! 🎉</div><div class="box escuro sm">Agora é só pesquisar o nome da sua loja no Google e ver como ficou</div>',
-        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer mais dicas como essa pra sua loja?</div><div class="box escuro sm">Me segue que eu te ensino<br>o passo a passo 👣</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
+        f'<img class="selo canto" src="{m["sz_uri"]}"><div class="box ouro sm">🚨 Alerta de ATUALIZAÇÃO</div><div class="box escuro big">que vai fazer a sua loja <span class="hl">aparecer muito mais</span> no Google!</div>',
+        '<div class="box branco">Agora a sua loja pode ter um <span class="hla">perfil de creator</span> no Google!</div><div class="box escuro sm">E ele muda totalmente o que aparece quando alguém pesquisa o nome da loja 👀</div>',
+        f'<div class="box escuro sm">ANTES: esse era o resultado que aparecia quando pesquisavam a loja 👇</div>{antes}{NOTA}',
+        f'<div class="box escuro sm">E agora esse é o resultado que aparece DEPOIS que a loja criou o perfil no <span class="hl">Google creator!</span> 👇</div><div class="box lima" style="font-size:34px">✅ Muito mais completo, e com links que levam direto para os conteúdos do Instagram da loja!</div>{depois}{NOTA}',
+        f'<div class="box branco sm">E tem mais, se a cliente clicar em “ver perfil do creator” ela é <span class="hla">direcionada</span> para uma página com <span class="hla">todos os links das redes sociais</span> da loja 👌🔥</div>{perfil_pg}{NOTA}',
+        f'<div class="box escuro sm">E para criar o perfil é muito simples.</div><div class="box branco sm">1) Basta você acessar o site:</div><div class="box lima" style="font-size:40px">https://creators.google/pt-BR/profile</div>{link}',
+        '<div class="box escuro sm">2) Conecte o perfil do Instagram da loja para validar a inscrição</div><div class="box ouro xs">(Válido apenas para quem tem mais de 10 mil seguidores)</div><div class="gap"></div><div class="box branco sm">3) Conecte as outras redes sociais (se quiser)</div><div class="gap"></div><div class="box lima sm">4) Conclua o cadastro e acesse o perfil da loja no Google</div>',
+        '<div class="box escuro sm">5) Agora é só personalizar para deixar todas as informações da loja atualizadas</div><div class="gap"></div><div class="box branco sm">Depois é só pesquisar o nome da loja no Google para ver como ficou! 🎉</div>',
+        f'<img class="selo" src="{m["sz_uri"]}"><div class="box lima">Gostou? Já curte esse post ❤️</div><div class="box branco">E se quiser receber mais conteúdos como esse é só seguir</div><div class="box escuro" style="font-size:52px">{m["perfil"]}</div>',
     ]
 
 
