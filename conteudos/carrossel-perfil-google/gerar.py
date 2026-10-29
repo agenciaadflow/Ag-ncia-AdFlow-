@@ -165,9 +165,9 @@ def slides(m):
 <div style="padding:20px 30px"><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">YouTube</span>
 <div class="src" style="margin:18px 0 6px;font-weight:700">Posts mais recentes</div><div class="posts">{miniaturas()}</div></div></div>"""
     return [
-        f'{busca("Novidade no Google")}<div class="box ouro sm">🚨 Novidade no Google!</div><div class="box escuro big">Quem tem <span class="hl">muitos seguidores</span> agora ganha uma página no Google</div>',
+        f'{busca("perfil do Instagram no Google")}<div class="box ouro sm">🚨 Novidade no Google!</div><div class="box escuro">Se o perfil do seu Instagram tem <span class="hl">mais de 10 mil seguidores</span>, ele agora pode aparecer no Google!</div>',
         f'{busca("loja de roupas perto de mim")}<div class="box branco big">Mas e quem tem <span class="hla">LOJA?</span> 🤔</div><div class="box escuro sm">Vou te mostrar de um jeito simples 👇</div>',
-        f'<div class="box escuro sm">Quem cria conteúdo (+10 mil seguidores) aparece assim 👇</div>{perfil_pg}{NOTA}',
+        f'<div class="box escuro sm">Olha como o perfil do Instagram aparece no Google 👇</div>{perfil_pg}{NOTA}',
         f'{mapa()}<div class="box ouro sm">E a sua loja? 🛍️</div><div class="box escuro">Ela aparece pelo <span class="hl">Google Meu Negócio</span> 📍</div><div class="gap"></div><div class="box branco sm">É aquela ficha com fotos, endereço, horário e avaliações</div>',
         f'<div class="box escuro sm">Ficha abandonada 😬<br><span class="hl">a cliente desiste e vai na concorrente</span></div>{painel_loja(m, False)}{NOTA}',
         f'<div class="box escuro sm">Ficha caprichada 🤩<br><span class="hl">a cliente confia e já chama no WhatsApp</span></div>{painel_loja(m, True)}{NOTA}',
