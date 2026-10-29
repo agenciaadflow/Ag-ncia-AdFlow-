@@ -140,6 +140,7 @@ def slides(m):
         f'<div class="box escuro sm">Ficha abandonada 😬<br><span class="hl">a cliente desiste e vai na concorrente</span></div>{painel_loja(m, False)}{NOTA}',
         f'<div class="box escuro sm">Ficha caprichada 🤩<br><span class="hl">a cliente confia e já chama no WhatsApp</span></div>{painel_loja(m, True)}{NOTA}',
         '<div class="box escuro sm">Como deixar a sua assim:</div><div class="box branco sm" style="text-align:left;font-size:40px;line-height:1.5">✅ Fotos bonitas das roupas<br>✅ Horário e WhatsApp certos<br>✅ Pedir avaliação pras clientes<br>✅ Postar novidades toda semana</div>',
+        '<div class="box branco big">Gostou do conteúdo?</div><div class="box lima big">Já curte esse post ❤️</div><div class="gap"></div><div class="box escuro sm">e manda pra uma amiga que tem loja 📲</div>',
         f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer ajuda pra deixar a ficha da sua loja assim? Comenta <span class="hla">GOOGLE</span> 💬</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
     ]
 
