@@ -1,4 +1,4 @@
-"""Gera o carrossel "Perfil no Google para Criadores" (9 slides, 1080x1350).
+"""Gera o carrossel "Sua loja no Google" (1080x1350).
 
 Uso:
     python3 gerar.py                                  # identidade Szadura + foto-josania.jpg
@@ -73,11 +73,11 @@ body{{width:1080px;height:1350px;overflow:hidden;font-family:Inter,sans-serif}}
 """
 
 
-def pagina(m, n, conteudo, sem_foto):
+def pagina(m, n, total, conteudo, sem_foto):
     ph = '<div class="ph">SUA FOTO AQUI</div>' if sem_foto else ""
     topo = f'<img src="{m["sz_uri"]}"><b>{m["assinatura"]}</b>'
     return (
-        f'<div class="slide">{ph}<div class="topo"><span>{topo}</span><span>{n}/9</span></div>'
+        f'<div class="slide">{ph}<div class="topo"><span>{topo}</span><span>{n}/{total}</span></div>'
         f'<div class="stack">{conteudo}</div>'
         f'<div class="rodape"><span>{m["slogan"]}</span><b>{m["perfil"]}</b></div></div>'
     )
@@ -117,7 +117,7 @@ def painel_loja(m, forte):
         nota, aval, info = "3,8", "(6 avaliações)", "Horário não informado"
         botoes = ["Rotas", "Salvar"]
         fotos = '<div class="thumb" style="background:#e9e9e9;width:470px;height:120px"><span class="peca" style="top:22px;font-size:52px">🏬</span></div>'
-        extra = '<div class="desc" style="margin-top:12px;color:#b3261e">Sem site · Sem telefone · Sem fotos recentes</div>'
+        extra = '<div class="desc" style="margin-top:12px;color:#b3261e;font-size:18px">Sem WhatsApp · Sem horário · Sem fotos</div>'
         estrelas = "★★★★☆"
     chips = "".join(f'<span class="chip">{b}</span>' for b in botoes)
     corpo = f"""<div class="res"><div style="font:800 30px Inter;color:#202124">{LOJA}</div>
@@ -129,23 +129,18 @@ def painel_loja(m, forte):
 def slides(m):
     nome, perfil = CRIADORA["nome"], CRIADORA["perfil"]
     perfil_pg = f"""<div class="mock" style="width:760px">
-<div style="background:{m['cor_fundo']};color:#fff;padding:28px 30px"><div style="font:800 40px Inter">{nome}</div><div style="font-size:18px;opacity:.8">{perfil} · Perfil na Pesquisa</div></div>
-<div style="padding:20px 30px"><span class="chip">+ Seguir no Google</span><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">YouTube</span>
+<div style="background:{m['cor_fundo']};color:#fff;padding:28px 30px"><div style="font:800 40px Inter">{nome}</div><div style="font-size:18px;opacity:.8">{perfil} · Página no Google</div></div>
+<div style="padding:20px 30px"><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">YouTube</span>
 <div class="src" style="margin:18px 0 6px;font-weight:700">Posts mais recentes</div><div class="posts">{miniaturas()}</div></div></div>"""
-    link = f"""<div class="mock" style="width:760px"><div style="background:{m['cor_fundo']};color:{m['cor_primaria']};padding:40px 30px;text-align:center;font:800 36px Inter">Perfil na Pesquisa<br>Google para Criadores</div>
-<div style="padding:22px 30px;background:#eef3ff"><div style="font:700 22px Inter">Requisitos oficiais</div>
-<div class="desc" style="font-size:19px;margin-top:6px">✔ 10 mil seguidores em UMA rede: Instagram, TikTok, YouTube ou X<br>✔ Ter 18 anos ou mais<br>✔ Seguir as políticas de conteúdo do Google</div>
-<div class="src" style="margin-top:10px;font-size:18px">🔗 profile.google.com/claim</div></div></div>"""
     return [
-        f'<img class="selo canto" src="{m["sz_uri"]}"><div class="box ouro sm">🚨 Alerta de ATUALIZAÇÃO</div><div class="box escuro big">O Google lançou o <span class="hl">Perfil na Pesquisa</span> no Brasil!</div>',
-        '<div class="box branco">Criadores com <span class="hla">+10 mil seguidores</span> agora podem ter um perfil oficial no Google</div><div class="gap"></div><div class="box escuro sm">Mas e se você tem uma LOJA? Calma que eu te explico 👀</div>',
-        f'<div class="box escuro sm">Para criadores, aparece um painel com <span class="hl">todas as redes e os posts recentes</span> 👇</div>{perfil_pg}{NOTA}',
-        f'<div class="box escuro sm">Para criar, acesse o site e faça login com a rede que tem os 10 mil seguidores:</div><div class="box lima" style="font-size:40px">profile.google.com/claim</div>{link}',
-        '<div class="box ouro sm">⚠️ Atenção, lojista!</div><div class="box escuro">Para empresas, o Google continua mostrando o <span class="hl">Perfil da Empresa</span></div><div class="gap"></div><div class="box branco sm">Ou seja: quem aparece pela sua loja é o <span class="hla">Google Meu Negócio</span> 📍</div>',
-        f'<div class="box escuro sm">E é assim que muita loja aparece quando a cliente pesquisa o nome 👇</div>{painel_loja(m, False)}{NOTA}',
-        f'<div class="box escuro sm">E assim aparece uma loja com o <span class="hl">Google Meu Negócio caprichado</span> 👇</div>{painel_loja(m, True)}{NOTA}',
-        '<div class="box escuro sm">O que deixa o perfil da sua loja forte no Google:</div><div class="box branco sm" style="text-align:left;font-size:38px;line-height:1.45">✅ Fotos reais das peças e da loja<br>✅ Horário, WhatsApp e site certinhos<br>✅ Responder todas as avaliações<br>✅ Postar as novidades toda semana</div>',
-        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer o Google Meu Negócio da sua loja assim? Comenta <span class="hla">GOOGLE</span> ou chama no direct</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
+        f'<img class="selo canto" src="{m["sz_uri"]}"><div class="box ouro sm">🚨 Novidade no Google!</div><div class="box escuro big">Quem tem <span class="hl">muitos seguidores</span> agora ganha uma página no Google</div>',
+        '<div class="box branco big">Mas e quem tem <span class="hla">LOJA?</span> 🤔</div><div class="gap"></div><div class="box escuro sm">Vou te mostrar de um jeito simples 👇</div>',
+        f'<div class="box escuro sm">Quem cria conteúdo (+10 mil seguidores) aparece assim 👇</div>{perfil_pg}{NOTA}',
+        '<div class="box ouro sm">E a sua loja? 🛍️</div><div class="box escuro">Ela aparece pelo <span class="hl">Google Meu Negócio</span> 📍</div><div class="gap"></div><div class="box branco sm">É aquela ficha com fotos, endereço, horário e avaliações</div>',
+        f'<div class="box escuro sm">Ficha abandonada 😬<br><span class="hl">a cliente desiste e vai na concorrente</span></div>{painel_loja(m, False)}{NOTA}',
+        f'<div class="box escuro sm">Ficha caprichada 🤩<br><span class="hl">a cliente confia e já chama no WhatsApp</span></div>{painel_loja(m, True)}{NOTA}',
+        '<div class="box escuro sm">Como deixar a sua assim:</div><div class="box branco sm" style="text-align:left;font-size:40px;line-height:1.5">✅ Fotos bonitas das roupas<br>✅ Horário e WhatsApp certos<br>✅ Pedir avaliação pras clientes<br>✅ Postar novidades toda semana</div>',
+        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer ajuda pra deixar a ficha da sua loja assim? Comenta <span class="hla">GOOGLE</span> 💬</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
     ]
 
 
@@ -163,15 +158,16 @@ def main():
     saida.mkdir(parents=True, exist_ok=True)
     estilo = css(m, foto)
     arquivos = []
-    for i, s in enumerate(slides(m), 1):
+    lista = slides(m)
+    for i, s in enumerate(lista, 1):
         html = saida / f"slide-{i:02d}.html"
-        html.write_text(f"<html><head><meta charset='utf-8'><style>{estilo}</style></head><body>{pagina(m, i, s, not foto)}</body></html>")
+        html.write_text(f"<html><head><meta charset='utf-8'><style>{estilo}</style></head><body>{pagina(m, i, len(lista), s, not foto)}</body></html>")
         arquivos.append(str(html.resolve()))
     # O Playwright deste ambiente é o do Node, então a captura roda por ele
     subprocess.run(["node", str(AQUI / "capturar.js"), *arquivos], check=True)
     for f in arquivos:
         Path(f).unlink()
-    print(f"9 slides em {saida}")
+    print(f"{len(lista)} slides em {saida}")
 
 
 if __name__ == "__main__":
