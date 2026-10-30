@@ -78,6 +78,28 @@ body{{width:1080px;height:1350px;overflow:hidden;font-family:Inter,sans-serif}}
 .tile span{{display:block;font-size:68px;margin-bottom:8px}}
 .acoes{{background:#fff;border-radius:28px;padding:22px 46px;display:flex;gap:56px;align-items:center;margin-bottom:22px;box-shadow:0 18px 50px rgba(0,0,0,.4);font-size:84px}}
 .acoes .cur{{font-size:130px;filter:drop-shadow(0 6px 14px rgba(234,67,53,.45))}}
+.cels{{display:flex;gap:26px;align-items:center;margin-top:18px}}
+.cel{{position:relative;background:#fff;border:10px solid #e6e8ec;border-radius:44px;box-shadow:0 18px 50px rgba(0,0,0,.45);overflow:hidden;font-family:Inter;color:#202124;text-align:left}}
+.cel .st{{display:flex;justify-content:space-between;font:700 15px Inter;padding:12px 22px 4px}}
+.selo-cel{{position:absolute;top:-2px;left:50%;transform:translateX(-50%);padding:8px 26px;border-radius:0 0 18px 18px;font:900 24px Inter;color:#fff;z-index:2}}
+.seta{{font:900 96px Inter;color:#fff;text-shadow:0 4px 14px rgba(0,0,0,.6)}}
+.linha{{height:9px;border-radius:5px;background:#e3e5e8;margin:7px 0}}
+.linha.az{{background:#8ab4f8}}
+.ico{{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;color:#fff;font:800 15px Inter;margin-right:6px}}
+.ig{{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}}
+.yt{{background:#FF0000}}.tt{{background:#000}}.web{{background:#1a73e8}}
+.avatar{{width:96px;height:96px;border-radius:50%;background:#F6D6D0;display:flex;align-items:center;justify-content:center;font-size:52px;flex:none}}
+.btn-seguir{{background:#1a73e8;color:#fff;border-radius:24px;text-align:center;font:700 18px Inter;padding:10px;margin:14px 0 8px}}
+.abas{{display:flex;gap:22px;font-size:15px;color:#5f6368;border-bottom:1px solid #eee;padding-bottom:8px}}
+.abas b{{color:#1a73e8;border-bottom:3px solid #1a73e8;padding-bottom:6px}}
+.mini{{display:flex;gap:8px;margin-top:10px}}
+.mini div{{flex:1;height:96px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px}}
+.rotulo{{display:inline-block;background:#fff;color:#0E0E0E;border-radius:20px;padding:6px 16px;font:800 20px Inter;margin-bottom:10px}}
+.opcoes{{display:flex;gap:18px;width:940px;margin-top:16px}}
+.opcao{{flex:1;background:#fff;border-radius:24px;padding:26px 20px;text-align:center;color:#0E0E0E;box-shadow:0 10px 30px rgba(0,0,0,.35)}}
+.opcao span{{display:block;font-size:76px}}
+.opcao b{{display:block;font:900 34px Inter;margin:8px 0}}
+.opcao p{{font:500 23px Inter;color:#3c4043;line-height:1.3}}
 .chip{{display:inline-block;border:1px solid #dadce0;border-radius:20px;padding:6px 14px;font-size:15px;margin-right:8px}}
 .circ{{outline:6px solid {ouro};outline-offset:6px;border-radius:16px}}
 """
@@ -101,7 +123,6 @@ def google(nome, corpo, largura=900):
 {corpo}</div>"""
 
 
-# Exemplos fictícios: uma criadora de moda (Perfil na Pesquisa) e uma loja (Perfil da Empresa)
 # Exemplo fictício: loja de roupas com +10 mil seguidores no Instagram
 LOJA = {"nome": "Aurora Moda", "perfil": "@auroramoda.loja"}
 PECAS = [("#F6D6D0", "👗", "Coleção nova ▶"), ("#D9E4F2", "👖", "Look do dia"), ("#F3E7C9", "👚", "Promo da semana")]
@@ -123,36 +144,69 @@ def busca(texto):
     return f'<div class="gcard">{logo_google()}<div class="gsearch">🔍&nbsp; {texto}<b>|</b></div></div>'
 
 
+ICONES = '<span class="ico ig">◎</span><span class="ico yt">▶</span><span class="ico tt">♪</span><span class="ico web">🌐</span>'
+
+
+def celular(miolo, largura=380, rotulo="", cor_rotulo="#5f6368"):
+    tag = f'<div class="selo-cel" style="background:{cor_rotulo}">{rotulo}</div>' if rotulo else ""
+    return (f'<div class="cel" style="width:{largura}px">{tag}<div class="st"><span>9:41</span><span>▂▄▆ ▮</span></div>'
+            f'<div style="padding:14px 20px 22px">{miolo}</div></div>')
+
+
+def tela_busca(nome, com_perfil=False):
+    resultados = "".join(
+        f'<div style="margin-top:16px;font-size:15px">{ico} {site}</div><div class="linha az" style="width:70%"></div><div class="linha"></div>'
+        for ico, site in [('<span class="ico ig" style="width:24px;height:24px;font-size:11px">◎</span>', "instagram.com"),
+                          ('<span class="ico web" style="width:24px;height:24px;font-size:11px">🌐</span>', "outros sites"),
+                          ('<span class="ico yt" style="width:24px;height:24px;font-size:11px">▶</span>', "youtube.com")]
+    )
+    if com_perfil:
+        resultados = (f'<div style="display:flex;gap:10px;align-items:center;margin-top:14px;padding:10px;border:1px solid #e3e5e8;border-radius:14px">'
+                      f'<div class="avatar" style="width:50px;height:50px;font-size:28px">👗</div><div><div style="font:800 16px Inter">{nome} <span style="color:#1a73e8">✔</span></div>'
+                      f'<div style="font-size:12px;color:#5f6368">Loja de roupas · Ver perfil ›</div></div></div>' + resultados[:resultados.index('<div style="margin-top:16px;font-size:15px">', 10)])
+    return (f'<div style="text-align:center;margin-top:16px">{logo_google("glogo")}</div>'
+            f'<div class="gin" style="margin:12px 0 6px;font-size:18px">🔍 {nome}</div>{resultados}')
+
+
+def tela_perfil(nome):
+    return (f'<div style="display:flex;justify-content:space-between;align-items:center"><span>←</span>{logo_google("glogo")}<span>⋮</span></div>'
+            f'<div style="display:flex;gap:14px;align-items:center;margin-top:16px"><div class="avatar">👗</div>'
+            f'<div><div style="font:800 22px Inter">{nome} <span style="color:#1a73e8">✔</span></div>'
+            f'<div style="font-size:14px;color:#5f6368">Loja de roupas femininas</div><div style="margin-top:8px">{ICONES}</div></div></div>'
+            f'<div class="btn-seguir">Seguir</div><div class="abas"><b>Sobre</b><span>Posts</span><span>Vídeos</span><span>Fotos</span></div>'
+            f'<div class="mini"><div style="background:#F6D6D0">👗</div><div style="background:#D9E4F2">👖</div><div style="background:#F3E7C9">👚</div></div>')
+
+
+def tela_discover(nome):
+    return (f'<div style="text-align:center;margin-top:8px">{logo_google("glogo")}</div><div class="gin" style="margin:10px 0;font-size:15px">🔍 Pesquisar</div>'
+            f'<div style="height:150px;border-radius:14px;background:#F6D6D0;display:flex;align-items:center;justify-content:center;font-size:70px">👗</div>'
+            f'<div style="font:800 17px Inter;margin-top:10px">{nome} <span style="color:#1a73e8">✔</span></div><div style="margin-top:6px">{ICONES}</div>')
+
+
 def slides(m):
-    nome, perfil = LOJA["nome"], LOJA["perfil"]
-    usuario = perfil.lstrip("@")
-    antes = google(nome, f"""
-<div class="res"><div class="src">instagram.com › {usuario}</div><div class="tit">{nome} (@{usuario}) • Fotos e vídeos do Instagram</div>
-<div class="desc">Veja as fotos e vídeos do Instagram de {nome}…</div></div>
-<div class="res"><div class="src">facebook.com › {usuario}</div><div class="tit">{nome} | Facebook</div><div class="desc">Moda feminina…</div></div>""")
-    depois = google(nome, f"""
-<div class="res"><div class="src">Instagram · {perfil}</div><div class="tit">{nome} | Moda feminina</div>
-<div class="desc">Peças novas toda semana, looks e promoções…</div>
-<div class="src" style="margin-top:14px;font-weight:700">Posts mais recentes</div>
-<div class="posts circ">{miniaturas()}</div></div>""")
-    perfil_pg = f"""<div class="mock" style="width:760px">
-<div style="background:{m['cor_fundo']};color:#fff;padding:28px 30px"><div style="font:800 40px Inter">{nome}</div><div style="font-size:18px;opacity:.8">{perfil} · Perfil de criador</div></div>
-<div style="padding:20px 30px"><span class="chip">+ Seguir no Google</span><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">YouTube</span>
-<div class="src" style="margin:18px 0 6px;font-weight:700">Posts mais recentes</div><div class="posts">{miniaturas()}</div></div></div>"""
-    link = f"""<div class="mock" style="width:760px"><div style="background:{m['cor_fundo']};color:{m['cor_primaria']};padding:40px 30px;text-align:center;font:800 38px Inter">Sua presença oficial<br>no Google</div>
-<div style="padding:22px 30px;background:#eef3ff"><div style="font:700 24px Inter">Google para Criadores | Perfil na Pesquisa</div>
-<div class="desc" style="font-size:19px;margin-top:6px">Uma nova maneira de criadores, marcas e publishers se destacarem na Pesquisa.</div>
-<div class="src" style="margin-top:10px;font-size:18px">🔗 creators.google</div></div></div>"""
+    nome = LOJA["nome"]
+    antes_agora = (f'<div class="cels">{celular(tela_busca(nome), 400, "ANTES")}<div class="seta">→</div>'
+                   f'{celular(tela_perfil(nome), 420, "AGORA", "#1a73e8")}</div>')
+    tres = (f'<div class="cels" style="gap:16px">'
+            f'<div style="text-align:center"><div class="rotulo">🔍 Na busca</div>{celular(tela_busca(nome, True), 290)}</div>'
+            f'<div style="text-align:center"><div class="rotulo">👤 Página da loja</div>{celular(tela_perfil(nome).replace("font:800 22px", "font:800 17px"), 300)}</div>'
+            f'<div style="text-align:center"><div class="rotulo">✨ No Discover</div>{celular(tela_discover(nome), 290)}</div></div>')
+    recursos = [("📸", "Foto e bio que VOCÊ escolhe"), ("🔗", "Até 12 links"), ("⭐", "Posts em destaque"), ("📱", "Todas as redes num lugar só")]
+    passos = [("🌐", "1) Acesse o site creators.google"), ("📸", "2) Entre com o Instagram da loja"), ("🔗", "3) Conecte as outras redes (se quiser)"), ("✅", "4) Conclua e personalize")]
+    grade = lambda itens: '<div class="grade">' + "".join(f'<div class="tile" style="font-size:29px"><span>{e}</span>{t}</div>' for e, t in itens) + "</div>"
     return [
-        f'<img class="selo canto" src="{m["sz_uri"]}"><div class="box ouro sm">🚨 Alerta de ATUALIZAÇÃO</div><div class="box escuro big">que vai fazer a sua loja <span class="hl">aparecer muito mais</span> no Google!</div>',
-        '<div class="box branco">Agora a sua loja pode ter um <span class="hla">perfil de creator</span> no Google!</div><div class="box escuro sm">E ele muda totalmente o que aparece quando alguém pesquisa o nome da loja 👀</div>',
-        f'<div class="box escuro sm">ANTES: esse era o resultado que aparecia quando pesquisavam a loja 👇</div>{antes}{NOTA}',
-        f'<div class="box escuro sm">E agora esse é o resultado que aparece DEPOIS que a loja criou o perfil no <span class="hl">Google creator!</span> 👇</div><div class="box lima" style="font-size:34px">✅ Muito mais completo, e com links que levam direto para os conteúdos do Instagram da loja!</div>{depois}{NOTA}',
-        f'<div class="box branco sm">E tem mais, se a cliente clicar em “ver perfil do creator” ela é <span class="hla">direcionada</span> para uma página com <span class="hla">todos os links das redes sociais</span> da loja 👌🔥</div>{perfil_pg}{NOTA}',
-        f'<div class="box escuro sm">E para criar o perfil é muito simples.</div><div class="box branco sm">1) Basta você acessar o site:</div><div class="box lima" style="font-size:40px">https://creators.google/pt-BR/profile</div>{link}',
-        '<div class="box escuro sm">2) Conecte o perfil do Instagram da loja para validar a inscrição</div><div class="box ouro xs">(Válido apenas para quem tem mais de 10 mil seguidores)</div><div class="gap"></div><div class="box branco sm">3) Conecte as outras redes sociais (se quiser)</div><div class="gap"></div><div class="box lima sm">4) Conclua o cadastro e acesse o perfil da loja no Google</div>',
-        '<div class="box escuro sm">5) Agora é só personalizar para deixar todas as informações da loja atualizadas</div><div class="gap"></div><div class="box branco sm">Depois é só pesquisar o nome da loja no Google para ver como ficou! 🎉</div>',
-        f'<img class="selo" src="{m["sz_uri"]}"><div class="box lima">Gostou? Já curte esse post ❤️</div><div class="box branco">E se quiser receber mais conteúdos como esse é só seguir</div><div class="box escuro" style="font-size:52px">{m["perfil"]}</div>',
+        f'<img class="selo canto" src="{m["sz_uri"]}"><div class="box ouro sm">🚨 Chegou no Brasil!</div><div class="box escuro">Desde o dia 27, a sua loja pode ter uma <span class="hl">página oficial no Google</span></div>',
+        f'{busca(nome)}<div class="box branco sm">Até agora, o Google decidia o que mostrar quando pesquisavam a sua loja</div><div class="box lima">Agora, quem decide é você 💪</div>',
+        f'<div class="box escuro sm">Olha a diferença 👇</div>{antes_agora}{NOTA}',
+        f'<div class="box escuro sm">No perfil, a sua loja pode ter:</div>{grade(recursos)}',
+        f'<div class="box escuro sm">E ele aparece em <span class="hl">3 lugares</span> 👇</div>{tres}<div class="nota">Discover = o feed da tela inicial do app do Google</div>',
+        '<div class="box escuro">Pra ter, precisa de <span class="hl">10 mil seguidores</span></div><div class="box branco sm">no Instagram, TikTok, YouTube ou X</div><div class="gap"></div><div class="box ouro sm">⚠️ Não dá pra somar as redes: os 10 mil têm que estar numa conta só</div>',
+        f'<div class="box escuro sm">Pra criar é simples:</div>{grade(passos)}',
+        '<div class="box branco">Ainda não tem 10 mil seguidores? 🤔</div><div class="box lima sm">Tem 2 caminhos pra resolver:</div><div class="opcoes">'
+        '<div class="opcao"><span>🚀</span><b>Tráfego pago</b><p>Anúncios pra levar as clientes certas pro seu perfil e crescer mais rápido</p></div>'
+        '<div class="opcao"><span>📍</span><b>Google Meu Negócio</b><p>Grátis, e faz a sua loja aparecer no Google e no Maps desde já</p></div></div>',
+        '<div class="acoes"><span>📌</span><span class="cur">❤️</span><span>📲</span></div><div class="box branco big" style="font-size:60px">Salva esse post pra fazer com calma</div><div class="box lima sm">e já curte se te ajudou ❤️</div>',
+        f'<img class="selo" src="{m["sz_uri"]}"><div class="box branco">Quer ajuda com tráfego pago ou Google Meu Negócio?</div><div class="box escuro sm">Me segue que eu te ensino<br>o passo a passo 👣</div><div class="box lima" style="font-size:52px">{m["perfil"]}</div>',
     ]
 
 
