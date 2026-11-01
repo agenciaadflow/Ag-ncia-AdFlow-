@@ -88,3 +88,23 @@ Cortes rápidos de 2–3 s cada. Você reage em silêncio (cara de deboche, revi
 > "Enquanto isso, o concorrente? Tá com a Szadura."
 
 **Legenda:** Seu concorrente não é melhor que você. Ele só aparece mais. Comenta **EU QUERO** 👇
+
+---
+
+## Versão "anos 80" (estilo narrador do Chris) ⭐ atual
+**Cena 1:** comércio cheio (fila, gente entrando). Texto: `Brooklyn... digo, o seu bairro. 2026.`
+> 🎙️ "Era 2026. O concorrente estava com a loja lotada."
+
+**Cena 2:** você no balcão vazio, braços cruzados, olhando pra porta.
+> 🎙️ "E eu? Eu tinha os mesmos três clientes de sempre. Um deles só vinha pra usar o banheiro."
+
+**Cena 3:** você coçando a cabeça, olhando pro celular.
+> 🎙️ "Eu passava o dia me perguntando o que ele tinha feito de diferente."
+
+**Cena 4:** você olhando pra câmera, sorrisinho.
+> 🎙️ "Ele não tinha feito promoção. Não tinha distribuído panfleto. Ele contratou a Agência Szadura."
+
+**Cena 5 (fecho):**
+> 🎙️ "E foi aí que eu descobri: todo mundo odeia o concorrente... quando ele tem a Szadura."
+
+Texto final: `Agência Szadura | Comenta EU QUERO 👇`
