@@ -31,9 +31,9 @@ Cortes rápidos de 2–3 s cada. Você reage em silêncio (cara de deboche, revi
 
 ## Virada (28–38 s)
 **Cena:** você no notebook, trabalhando de verdade: gerenciador de anúncios, planilha de leads, perfil do Google. Corte final você fechando o notebook e sorrindo.
-**Texto na tela:** `Até conhecer a AdFlow`
+**Texto na tela:** `Até conhecer a Szadura`
 **Narração:**
-> "Até que ele conheceu a AdFlow. Relatório que fala em dinheiro, não em sigla. Lead que chega no WhatsApp querendo comprar. Perfil do Google no topo. E gestora que responde. Responde, gente."
+> "Até que ele conheceu a Szadura. Relatório que fala em dinheiro, não em sigla. Lead que chega no WhatsApp querendo comprar. Perfil do Google no topo. E gestora que responde. Responde, gente."
 
 ---
 
@@ -73,3 +73,18 @@ Cortes rápidos de 2–3 s cada. Você reage em silêncio (cara de deboche, revi
 - **Música de fundo:** a trilha da trend em volume baixo sob a narração.
 - **Prints:** use conversas e relatórios fictícios ou com dados de cliente borrados.
 - **Métrica de sucesso:** retenção nos 3 primeiros segundos e número de comentários "DIAGNÓSTICO".
+
+---
+
+## Versão relâmpago (7–10 s) ⭐ principal
+**Cena 1 (0–4 s):** você no carro ou no notebook, cara de deboche.
+**Texto na tela:** `TODO MUNDO ODEIA...`
+**Narração:**
+> "Todo mundo odeia ver o concorrente com o dobro de clientes... vendendo a mesma coisa que ele."
+
+**Cena 2 (4–8 s):** você vira pra câmera e dá um sorrisinho.
+**Texto na tela:** `A diferença? Ele tem a Agência Szadura.`
+**Narração:**
+> "A diferença? O concorrente tem a Szadura."
+
+**Legenda:** Seu concorrente não é melhor que você. Ele só aparece mais. Comenta **EU QUERO** 👇
