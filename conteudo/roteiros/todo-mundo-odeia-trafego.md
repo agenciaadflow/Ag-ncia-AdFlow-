@@ -80,7 +80,7 @@ Cortes rápidos de 2–3 s cada. Você reage em silêncio (cara de deboche, revi
 **Cena 1 (0–4 s):** você no carro ou no notebook, cara de deboche.
 **Texto na tela:** `TODO MUNDO ODEIA...`
 **Narração:**
-> "Todo mundo odeia ver o concorrente lotando de cliente com tráfego pago... enquanto ele 'não vê necessidade de investir'. E segue com os mesmos clientes de sempre: poucos, na sorte, esperando o boca a boca."
+> "Todo mundo odeia ver o concorrente com o comércio cheio... e ele com os mesmos clientes de sempre."
 
 **Cena 2 (4–8 s):** você vira pra câmera e dá um sorrisinho.
 **Texto na tela:** `Enquanto isso, o concorrente tá com a Agência Szadura.`
