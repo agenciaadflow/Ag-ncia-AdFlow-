@@ -7,6 +7,25 @@ function track(evento, dados) {
   try { if (typeof window.gtag === "function") window.gtag("event", evento === "Contact" ? "contact" : evento, dados || {}); } catch (e) {}
 }
 
+/* Origem da visita: só diz "Vim pelo Instagram" para quem chegou pelo Instagram
+   (navegador interno do app, ?utm_source=instagram ou link vindo do instagram.com).
+   A origem fica guardada na visita para valer também nas páginas internas. */
+function veioDoInstagram() {
+  var ig = /Instagram/i.test(navigator.userAgent || "") ||
+    /(^|[?&])(utm_source|origem)=instagram/i.test(location.search) ||
+    /instagram\.com/i.test(document.referrer || "");
+  try {
+    if (ig) sessionStorage.setItem("origem", "instagram");
+    else ig = sessionStorage.getItem("origem") === "instagram";
+  } catch (e) {}
+  return ig;
+}
+var DO_INSTAGRAM = veioDoInstagram();
+
+function comOrigem(msg) {
+  return DO_INSTAGRAM ? msg.replace("Vim pelo site", "Vim pelo Instagram") : msg;
+}
+
 function whatsLink(msg) {
   return "https://wa.me/" + WHATS_NUMERO + "?text=" + encodeURIComponent(msg);
 }
@@ -22,7 +41,7 @@ function whats(msg) {
 document.addEventListener("DOMContentLoaded", function () {
   /* Todo elemento com data-whats vira um link de WhatsApp com a mensagem pronta. */
   document.querySelectorAll("[data-whats]").forEach(function (el) {
-    var msg = el.getAttribute("data-whats");
+    var msg = comOrigem(el.getAttribute("data-whats"));
     if (el.tagName === "A") {
       el.href = whatsLink(msg);
       el.target = "_blank";
